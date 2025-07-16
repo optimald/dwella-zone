@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Download, Mail, QrCode, ArrowLeft, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { useConfiguratorStore } from '@/stores/configuratorStore'
-import QRCode from 'qrcode'
+// import QRCode from 'qrcode'
 
 export default function ConfiguratorSummary() {
   const { 
@@ -21,34 +21,34 @@ export default function ConfiguratorSummary() {
   const [sendingEmail, setSendingEmail] = useState(false)
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
-  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('')
+  // const [qrCodeDataUrl, setQrCodeDataUrl] = useState('')
 
   const configuration = getConfiguration()
   const recommendedPlan = getRecommendedPlan()
   const recommendedPacks = getRecommendedPacks()
 
   // Generate QR code on component mount
-  useEffect(() => {
-    const generateQRCode = async () => {
-      try {
-        const origin = typeof window !== 'undefined' ? window.location.origin : 'https://dwella.zone'
-        const configUrl = `${origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
-        const dataUrl = await QRCode.toDataURL(configUrl, {
-          width: 200,
-          margin: 2,
-          color: {
-            dark: '#d18c52', // dwella-gold
-            light: '#ffffff'
-          }
-        })
-        setQrCodeDataUrl(dataUrl)
-      } catch (error) {
-        console.error('Error generating QR code:', error)
-      }
-    }
+  // useEffect(() => {
+  //   const generateQRCode = async () => {
+  //     try {
+  //       const origin = typeof window !== 'undefined' ? window.location.origin : 'https://dwella.zone'
+  //       const configUrl = `${origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
+  //       const dataUrl = await QRCode.toDataURL(configUrl, {
+  //         width: 200,
+  //         margin: 2,
+  //         color: {
+  //           dark: '#d18c52', // dwella-gold
+  //           light: '#ffffff'
+  //         }
+  //       })
+  //       setQrCodeDataUrl(dataUrl)
+  //     } catch (error) {
+  //       console.error('Error generating QR code:', error)
+  //     }
+  //   }
 
-    generateQRCode()
-  }, [configuration])
+  //   generateQRCode()
+  // }, [configuration])
 
   const handleSendEmail = async () => {
     if (!email || !name) return
@@ -248,7 +248,7 @@ export default function ConfiguratorSummary() {
           </div>
 
           {/* QR Code */}
-          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+          {/* <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
             <div className="text-center mb-4">
               <QrCode className="h-12 w-12 text-dwella-gold mx-auto mb-3" />
               <h3 className="text-lg font-bold text-white mb-2">QR Code</h3>
@@ -267,7 +267,7 @@ export default function ConfiguratorSummary() {
                 <div className="text-center text-slate-400">Generating QR Code...</div>
               )}
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Next Steps */}
