@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook } from "lucide-react";
+import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook, Users, Award, Heart, Lock, Bell, Calendar, ChevronRight } from "lucide-react";
 import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
@@ -39,7 +39,7 @@ export default function HomePage() {
               <Link href="/portal" className="text-xl text-[#d18c52] hover:text-[#e09660] font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 Client Login
               </Link>
-              <Link href="/book-consultation" className="bg-[#d18c52] text-white px-8 py-3 rounded-lg text-xl hover:bg-[#e09660] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#d18c52]">
+              <Link href="/book-consultation" className="bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-8 py-3 rounded-lg text-xl hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#d18c52] shadow-lg hover:shadow-xl transform hover:scale-105">
                 Book Consultation
               </Link>
             </div>
@@ -47,220 +47,340 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative text-white overflow-hidden bg-[#161C20]">
+      {/* Hero Section - Enhanced with dynamic elements */}
+      <section className="relative text-white overflow-hidden bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#d18c52]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-96 h-96 bg-[#d18c52]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#d18c52]/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
           <div className="text-center">
+            {/* Urgency Banner */}
+            <div className="inline-flex items-center bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-6 py-3 rounded-full mb-8 animate-bounce">
+              <Bell className="w-5 h-5 mr-2" />
+              <span className="text-lg font-semibold">Limited Time: 30-Day Free Trial + $200 Installation Credit</span>
+            </div>
+
             <div className="mb-12">
               <Image
                 src="/dwell_zone_icon.png"
                 alt="Dwella Shield"
                 width={160}
                 height={160}
-                className="mx-auto mb-8 drop-shadow-lg"
+                className="mx-auto mb-8 drop-shadow-2xl animate-float"
                 priority
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight">
-              Peace of Mind
-              <span className="block text-[#d18c52]">
-                at Home
+
+            {/* Enhanced value proposition */}
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                Never Worry
+              </span>
+              <span className="block bg-gradient-to-r from-[#d18c52] via-[#e09660] to-[#d18c52] bg-clip-text text-transparent">
+                About Home Security
               </span>
             </h1>
-            <p className="text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Installed, Supported, Protected. Premium smart home service for those who value security, simplicity, and peace of mind.
+            
+            <p className="text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed font-light">
+              Professional smart home installation, 24/7 monitoring, and concierge support. 
+              <span className="text-[#d18c52] font-semibold"> Your peace of mind is our priority.</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/book-consultation" className="bg-[#d18c52] text-white px-12 py-6 rounded-lg text-2xl font-semibold hover:bg-[#e09660] transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center">
-                Book a Consultation
-                <ArrowRight className="ml-3 w-7 h-7" />
+
+            {/* Social proof stats */}
+            <div className="flex flex-wrap justify-center gap-8 mb-12 text-center">
+              <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+                <div className="text-3xl font-bold text-[#d18c52]">10,000+</div>
+                <div className="text-lg text-gray-300">Protected Homes</div>
+              </div>
+              <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+                <div className="text-3xl font-bold text-[#d18c52]">99.9%</div>
+                <div className="text-lg text-gray-300">Uptime Guarantee</div>
+              </div>
+              <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+                <div className="text-3xl font-bold text-[#d18c52]">24/7</div>
+                <div className="text-lg text-gray-300">Expert Support</div>
+              </div>
+            </div>
+
+            {/* Enhanced CTAs */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Link href="/book-consultation" className="group bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-12 py-6 rounded-xl text-2xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center shadow-2xl hover:shadow-[#d18c52]/25">
+                Secure My Home Now
+                <ArrowRight className="ml-3 w-7 h-7 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/packages" className="border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-lg text-2xl font-semibold hover:bg-[#d18c52] hover:text-white transition-all duration-300 inline-flex items-center justify-center">
-                See Packages
+              <Link href="/packages" className="group border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-xl text-2xl font-bold hover:bg-[#d18c52] hover:text-white transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
+                Compare Packages
+                <ChevronRight className="ml-3 w-7 h-7 group-hover:translate-x-1 transition-transform" />
               </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center items-center gap-8 text-gray-300">
+              <div className="flex items-center space-x-2">
+                <Award className="w-6 h-6 text-[#d18c52]" />
+                <span className="text-lg">BBB A+ Rated</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Shield className="w-6 h-6 text-[#d18c52]" />
+                <span className="text-lg">UL Certified</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Users className="w-6 h-6 text-[#d18c52]" />
+                <span className="text-lg">10,000+ Happy Customers</span>
+              </div>
             </div>
           </div>
         </div>
-        {/* Floating Icons */}
-        <div className="absolute top-1/4 left-10 animate-pulse-slow">
-          <Shield className="w-12 h-12 text-[#d18c52] opacity-60" />
+
+        {/* Enhanced floating elements */}
+        <div className="absolute top-1/4 left-10 animate-float">
+          <Shield className="w-12 h-12 text-[#d18c52] opacity-60 drop-shadow-lg" />
         </div>
-        <div className="absolute top-1/3 right-16 animate-pulse-slow delay-1000">
-          <Home className="w-14 h-14 text-[#d18c52] opacity-60" />
+        <div className="absolute top-1/3 right-16 animate-float delay-1000">
+          <Home className="w-14 h-14 text-[#d18c52] opacity-60 drop-shadow-lg" />
         </div>
-        <div className="absolute bottom-1/4 left-1/4 animate-pulse-slow delay-2000">
-          <Wifi className="w-10 h-10 text-[#d18c52] opacity-60" />
+        <div className="absolute bottom-1/4 left-1/4 animate-float delay-2000">
+          <Wifi className="w-10 h-10 text-[#d18c52] opacity-60 drop-shadow-lg" />
+        </div>
+        <div className="absolute top-1/2 right-1/3 animate-float delay-1500">
+          <Lock className="w-8 h-8 text-[#d18c52] opacity-60 drop-shadow-lg" />
         </div>
       </section>
 
-      {/* Trust Badges */}
+      {/* Enhanced Trust Badges */}
       <section className="py-16 border-b border-gray-700 bg-[#161C20]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center items-center gap-12 text-gray-300">
-            <div className="flex items-center space-x-3">
-              <CheckCircle className="w-8 h-8 text-[#d18c52]" />
-              <span className="text-2xl font-medium">Licensed & Insured</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
+                <CheckCircle className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
+                <h3 className="text-xl font-bold text-white mb-2">Licensed & Insured</h3>
+                <p className="text-gray-300">Full coverage protection</p>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <Shield className="w-8 h-8 text-[#d18c52]" />
-              <span className="text-2xl font-medium">Security Verified</span>
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
+                <Shield className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
+                <h3 className="text-xl font-bold text-white mb-2">Security Verified</h3>
+                <p className="text-gray-300">Industry certified</p>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <Star className="w-8 h-8 text-[#d18c52]" />
-              <span className="text-2xl font-medium">5-Star Rated</span>
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
+                <Star className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
+                <h3 className="text-xl font-bold text-white mb-2">5-Star Rated</h3>
+                <p className="text-gray-300">Customer satisfaction</p>
+              </div>
             </div>
-            <div className="flex items-center space-x-3">
-              <Clock className="w-8 h-8 text-gray-400" />
-              <span className="text-2xl font-medium">24/7 Support</span>
+            <div className="text-center group">
+              <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
+                <Clock className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
+                <h3 className="text-xl font-bold text-white mb-2">24/7 Support</h3>
+                <p className="text-gray-300">Always here for you</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Packages Preview */}
+      {/* Enhanced Packages Preview */}
       <section className="py-24 bg-[#161C20]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Choose Your Perfect Package
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
+              Choose Your <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Protection Level</span>
             </h2>
             <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              From basic monitoring to full concierge service, we have a plan that fits your needs and budget.
+              From essential monitoring to full concierge service. Each package includes professional installation, 24/7 monitoring, and our peace-of-mind guarantee.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-10">
-            {/* Light Package */}
-            <div className="bg-[#1F2937] rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#d18c52]/20">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-white mb-3">Light</h3>
-                <div className="text-5xl font-bold text-[#d18c52] mb-6">
-                  $49<span className="text-2xl text-gray-300">/mo</span>
+            {/* Essential Package */}
+            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="relative">
+                <div className="text-center mb-6">
+                  <h3 className="text-3xl font-bold text-white mb-3">Essential</h3>
+                  <div className="text-5xl font-black text-[#d18c52] mb-2">
+                    $49<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                  </div>
+                  <p className="text-lg text-gray-300">Perfect for apartments & small homes</p>
                 </div>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">Basic home monitoring with essential devices</p>
-                <ul className="text-left space-y-4 mb-10">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Up to 10 devices</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Up to 8 smart devices</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Basic monitoring</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Basic intrusion detection</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Email support</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Mobile app access</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Monthly check-ins</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Email & chat support</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Monthly health check</span>
                   </li>
                 </ul>
-                <Link href="/packages/light" className="block w-full bg-[#d18c52] text-white py-4 rounded-lg text-xl font-semibold hover:bg-[#e09660] transition-colors">
-                  Get Started
+                <Link href="/packages/essential" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
+                  Start Essential Protection
                 </Link>
               </div>
             </div>
 
-            {/* Core Package - Featured */}
-            <div className="bg-[#1F2937] rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-[#d18c52] relative">
+            {/* Premium Package - Featured */}
+            <div className="group bg-gradient-to-br from-[#d18c52]/10 to-[#e09660]/10 rounded-2xl p-10 shadow-2xl hover:shadow-[#d18c52]/25 transition-all duration-300 border-2 border-[#d18c52] relative overflow-hidden scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-[#d18c52] text-white px-6 py-2 rounded-full text-xl font-semibold">Most Popular</span>
+                <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-8 py-3 rounded-full text-xl font-bold shadow-lg">MOST POPULAR</span>
               </div>
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-white mb-3">Core</h3>
-                <div className="text-5xl font-bold text-[#d18c52] mb-6">
-                  $99<span className="text-2xl text-gray-300">/mo</span>
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#d18c52]/10 rounded-full -translate-y-20 translate-x-20"></div>
+              <div className="relative">
+                <div className="text-center mb-6">
+                  <h3 className="text-3xl font-bold text-white mb-3">Premium</h3>
+                  <div className="text-5xl font-black text-[#d18c52] mb-2">
+                    $99<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                  </div>
+                  <p className="text-lg text-gray-300">Complete home security & automation</p>
                 </div>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">Enhanced home automation with priority support</p>
-                <ul className="text-left space-y-4 mb-10">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Up to 25 devices</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Up to 20 smart devices</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Advanced monitoring</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Advanced AI monitoring</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Priority phone support</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Priority phone support</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Family sharing (3 members)</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Family sharing (5 members)</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Bi-weekly check-ins</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Bi-weekly check-ins</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Custom automation rules</span>
                   </li>
                 </ul>
-                <Link href="/packages/core" className="block w-full bg-[#d18c52] text-white py-4 rounded-lg text-xl font-semibold hover:bg-[#e09660] transition-colors">
-                  Get Started
+                <Link href="/packages/premium" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 shadow-lg">
+                  Start Premium Protection
                 </Link>
               </div>
             </div>
 
-            {/* Aura Package */}
-            <div className="bg-[#1F2937] rounded-2xl p-10 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#d18c52]/20">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-white mb-3">Aura</h3>
-                <div className="text-5xl font-bold text-[#d18c52] mb-6">
-                  $199<span className="text-2xl text-gray-300">/mo</span>
+            {/* Concierge Package */}
+            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="relative">
+                <div className="text-center mb-6">
+                  <h3 className="text-3xl font-bold text-white mb-3">Concierge</h3>
+                  <div className="text-5xl font-black text-[#d18c52] mb-2">
+                    $199<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                  </div>
+                  <p className="text-lg text-gray-300">Luxury service for discerning clients</p>
                 </div>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">Complete concierge service with unlimited support</p>
-                <ul className="text-left space-y-4 mb-10">
+                <ul className="space-y-4 mb-10">
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Unlimited devices</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Unlimited smart devices</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Premium monitoring</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">AI-powered threat detection</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">24/7 concierge support</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">24/7 dedicated concierge</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Family sharing (5 members)</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Family sharing (unlimited)</span>
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-7 h-7 text-[#d18c52] mr-4" />
-                    <span className="text-xl text-white">Weekly check-ins</span>
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Weekly check-ins</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                    <span className="text-lg text-white">Custom integrations</span>
                   </li>
                 </ul>
-                <Link href="/packages/aura" className="block w-full bg-[#d18c52] text-white py-4 rounded-lg text-xl font-semibold hover:bg-[#e09660] transition-colors">
-                  Get Started
+                <Link href="/packages/concierge" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
+                  Start Concierge Service
                 </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Money-back guarantee */}
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center bg-gradient-to-r from-[#d18c52]/20 to-[#e09660]/20 rounded-xl px-8 py-6 border border-[#d18c52]/30">
+              <Heart className="w-8 h-8 text-[#d18c52] mr-4" />
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-2">30-Day Money-Back Guarantee</h3>
+                <p className="text-lg text-gray-300">Not satisfied? Get a full refund, no questions asked.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Enhanced Testimonials */}
       <Testimonials />
 
-      {/* Call to Action */}
-      <section className="py-24 bg-[#161C20]">
+      {/* Enhanced Call to Action */}
+      <section className="py-24 bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-8">
-            Ready to Secure Your Home?
+          <h2 className="text-5xl md:text-6xl font-black text-white mb-8">
+            Ready to <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Secure Your Future</span>?
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-12 leading-relaxed">
-            Join thousands of families who trust Dwella with their peace of mind.
+          <p className="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed">
+            Join 10,000+ families who trust Dwella with their peace of mind.
           </p>
+          
+          {/* Urgency elements */}
+          <div className="flex flex-wrap justify-center gap-6 mb-12">
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+              <div className="text-2xl font-bold text-[#d18c52]">Free Installation</div>
+              <div className="text-lg text-gray-300">$500 value</div>
+            </div>
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+              <div className="text-2xl font-bold text-[#d18c52]">30-Day Trial</div>
+              <div className="text-lg text-gray-300">Risk-free start</div>
+            </div>
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+              <div className="text-2xl font-bold text-[#d18c52]">24/7 Support</div>
+              <div className="text-lg text-gray-300">Always here</div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/book-consultation" className="bg-[#d18c52] text-white px-12 py-6 rounded-lg text-2xl font-semibold hover:bg-[#e09660] transition-all duration-300 inline-flex items-center justify-center">
+            <Link href="/book-consultation" className="group bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-12 py-6 rounded-xl text-2xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 inline-flex items-center justify-center shadow-2xl hover:shadow-[#d18c52]/25 transform hover:scale-105">
               Schedule Free Consultation
-              <Phone className="ml-3 w-7 h-7" />
+              <Calendar className="ml-3 w-7 h-7 group-hover:scale-110 transition-transform" />
             </Link>
-            <Link href="/contact" className="border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-lg text-2xl font-semibold hover:bg-[#d18c52] hover:text-white transition-all duration-300">
-              Contact Support Team
+            <Link href="/contact" className="group border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-xl text-2xl font-bold hover:bg-[#d18c52] hover:text-white transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
+              Talk to Expert
+              <Phone className="ml-3 w-7 h-7 group-hover:scale-110 transition-transform" />
             </Link>
           </div>
         </div>
@@ -285,15 +405,15 @@ export default function HomePage() {
                 Premium smart home service for those who value security, simplicity, and peace of mind.
               </p>
               <div className="flex space-x-6">
-                              <a 
-                href="https://www.facebook.com/dwellazone" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#d18c52] transition-colors"
-                aria-label="Follow Dwella on Facebook"
-              >
-                <Facebook className="w-8 h-8" />
-              </a>
+                <a 
+                  href="https://www.facebook.com/dwellazone" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#d18c52] transition-colors"
+                  aria-label="Follow Dwella on Facebook"
+                >
+                  <Facebook className="w-8 h-8" />
+                </a>
               </div>
               <div className="mt-8">
                 <p className="text-xl text-gray-300">
