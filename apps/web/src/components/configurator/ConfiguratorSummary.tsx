@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Download, Mail, QrCode, ArrowLeft, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { useConfiguratorStore } from '@/stores/configuratorStore'
+import QRCode from 'qrcode'
 
 export default function ConfiguratorSummary() {
   const { 
@@ -20,10 +21,34 @@ export default function ConfiguratorSummary() {
   const [sendingEmail, setSendingEmail] = useState(false)
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('')
 
   const configuration = getConfiguration()
   const recommendedPlan = getRecommendedPlan()
   const recommendedPacks = getRecommendedPacks()
+
+  // Generate QR code on component mount
+  useEffect(() => {
+    const generateQRCode = async () => {
+      try {
+        const origin = typeof window !== 'undefined' ? window.location.origin : 'https://dwella.zone'
+        const configUrl = `${origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
+        const dataUrl = await QRCode.toDataURL(configUrl, {
+          width: 200,
+          margin: 2,
+          color: {
+            dark: '#d18c52', // dwella-gold
+            light: '#ffffff'
+          }
+        })
+        setQrCodeDataUrl(dataUrl)
+      } catch (error) {
+        console.error('Error generating QR code:', error)
+      }
+    }
+
+    generateQRCode()
+  }, [configuration])
 
   const handleSendEmail = async () => {
     if (!email || !name) return
@@ -81,12 +106,6 @@ export default function ConfiguratorSummary() {
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
-  }
-
-  const generateQRCode = () => {
-    // Generate a simple QR code URL for the configuration
-    const configUrl = `${window.location.origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
-    return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(configUrl)}`
   }
 
   if (!recommendedPlan) {
@@ -236,13 +255,17 @@ export default function ConfiguratorSummary() {
               <p className="text-slate-300 text-sm">Scan to view this configuration</p>
             </div>
             <div className="flex justify-center">
-              <Image
-                src={generateQRCode()}
-                alt="Configuration QR Code"
-                width={120}
-                height={120}
-                className="rounded-lg"
-              />
+              {qrCodeDataUrl ? (
+                <Image
+                  src={qrCodeDataUrl}
+                  alt="Configuration QR Code"
+                  width={120}
+                  height={120}
+                  className="rounded-lg"
+                />
+              ) : (
+                <div className="text-center text-slate-400">Generating QR Code...</div>
+              )}
             </div>
           </div>
         </div>
