@@ -1,4 +1,4 @@
-import { MessageCircle, FileText, Phone, Mail, Clock, CheckCircle } from 'lucide-react'
+import { MessageCircle, FileText, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'

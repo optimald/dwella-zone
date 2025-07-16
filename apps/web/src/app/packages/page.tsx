@@ -118,7 +118,7 @@ export default function PackagesPage() {
                 </div>
 
                 <div className="space-y-4 mb-8">
-                  <h4 className="text-lg font-semibold text-white mb-3">What's Included:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-3">What&apos;s Included:</h4>
                   {pkg.features.map((feature) => (
                     <div key={feature} className="flex items-center">
                       <Check className="h-5 w-5 text-green-400 mr-3 flex-shrink-0" />

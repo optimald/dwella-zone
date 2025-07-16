@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Calendar, Clock, MapPin, Phone, Mail, Upload, CheckCircle } from 'lucide-react'
+import { Calendar, Clock, MapPin, CheckCircle } from 'lucide-react'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 
@@ -66,18 +66,19 @@ export default function BookConsultationPage() {
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
         <Navigation />
         <div className="flex items-center justify-center min-h-screen">
-        <div className="max-w-md mx-auto text-center bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
-          <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
-          <h1 className="text-3xl font-bold text-white mb-4">Thank You!</h1>
-          <p className="text-slate-300 mb-6">
-            Your consultation request has been submitted. We&apos;ll contact you within 24 hours to confirm your appointment.
-          </p>
-          <button
-            onClick={() => setIsSubmitted(false)}
-            className="bg-dwella-gold text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-dwella-gold/90 transition-colors"
-          >
-            Book Another Consultation
-          </button>
+          <div className="max-w-md mx-auto text-center bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+            <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-6" />
+            <h1 className="text-3xl font-bold text-white mb-4">Thank You!</h1>
+            <p className="text-slate-300 mb-6">
+              Your consultation request has been submitted. We&apos;ll contact you within 24 hours to confirm your appointment.
+            </p>
+            <button
+              onClick={() => setIsSubmitted(false)}
+              className="bg-dwella-gold text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-dwella-gold/90 transition-colors"
+            >
+              Book Another Consultation
+            </button>
+          </div>
         </div>
         <Footer />
       </div>
