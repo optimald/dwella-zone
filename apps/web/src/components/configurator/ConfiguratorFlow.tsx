@@ -91,7 +91,7 @@ export default function ConfiguratorFlow() {
         <button
           onClick={handleBack}
           disabled={currentQuestionIndex === 0}
-          className="flex items-center space-x-2 px-6 py-3 text-slate-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center space-x-2 px-6 py-3 text-white hover:text-dwella-gold disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
         >
           <ChevronLeft className="w-5 h-5" />
           <span>Back</span>
@@ -125,7 +125,7 @@ export default function ConfiguratorFlow() {
         <div className="text-center">
           <button
             onClick={handleContinue}
-            className="text-slate-400 hover:text-white text-sm transition-colors"
+            className="text-white hover:text-dwella-gold text-sm transition-colors font-medium underline underline-offset-4 hover:no-underline"
           >
             Skip this question
           </button>
