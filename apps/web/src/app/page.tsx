@@ -306,7 +306,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-            <p className="text-lg">&copy; 2024 Dwella. All rights reserved. | <Link href="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link> | <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link></p>
+            <p className="text-lg">&copy; 2024 Dwella. All rights reserved. | <Link href="/privacy-policy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link> | <Link href="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link></p>
           </div>
         </div>
       </footer>
