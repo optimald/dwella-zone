@@ -21,34 +21,17 @@ export default function ConfiguratorSummary() {
   const [sendingEmail, setSendingEmail] = useState(false)
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
-  // const [qrCodeDataUrl, setQrCodeDataUrl] = useState('')
 
   const configuration = getConfiguration()
   const recommendedPlan = getRecommendedPlan()
   const recommendedPacks = getRecommendedPacks()
 
-  // Generate QR code on component mount
-  // useEffect(() => {
-  //   const generateQRCode = async () => {
-  //     try {
-  //       const origin = typeof window !== 'undefined' ? window.location.origin : 'https://dwella.zone'
-  //       const configUrl = `${origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
-  //       const dataUrl = await QRCode.toDataURL(configUrl, {
-  //         width: 200,
-  //         margin: 2,
-  //         color: {
-  //           dark: '#d18c52', // dwella-gold
-  //           light: '#ffffff'
-  //         }
-  //       })
-  //       setQrCodeDataUrl(dataUrl)
-  //     } catch (error) {
-  //       console.error('Error generating QR code:', error)
-  //     }
-  //   }
-
-  //   generateQRCode()
-  // }, [configuration])
+  // Generate QR code URL
+  const generateQRCodeUrl = () => {
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://dwella.zone'
+    const configUrl = `${origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
+    return `https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=${encodeURIComponent(configUrl)}&chco=d18c52`
+  }
 
   const handleSendEmail = async () => {
     if (!email || !name) return
@@ -248,26 +231,22 @@ export default function ConfiguratorSummary() {
           </div>
 
           {/* QR Code */}
-          {/* <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
             <div className="text-center mb-4">
               <QrCode className="h-12 w-12 text-dwella-gold mx-auto mb-3" />
               <h3 className="text-lg font-bold text-white mb-2">QR Code</h3>
               <p className="text-slate-300 text-sm">Scan to view this configuration</p>
             </div>
             <div className="flex justify-center">
-              {qrCodeDataUrl ? (
-                <Image
-                  src={qrCodeDataUrl}
-                  alt="Configuration QR Code"
-                  width={120}
-                  height={120}
-                  className="rounded-lg"
-                />
-              ) : (
-                <div className="text-center text-slate-400">Generating QR Code...</div>
-              )}
+              <Image
+                src={generateQRCodeUrl()}
+                alt="Configuration QR Code"
+                width={120}
+                height={120}
+                className="rounded-lg"
+              />
             </div>
-          </div> */}
+          </div>
         </div>
 
         {/* Next Steps */}
