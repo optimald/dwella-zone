@@ -21,6 +21,9 @@ export default function Navigation() {
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-10">
+            <Link href="/configurator" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
+              Configurator
+            </Link>
             <Link href="/packages" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
               Solutions
             </Link>
