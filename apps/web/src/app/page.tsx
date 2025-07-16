@@ -80,23 +80,23 @@ export default function HomePage() {
             {/* Enhanced value proposition */}
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-tight">
               <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                Never Worry
+                Your Smart Home
               </span>
               <span className="block bg-gradient-to-r from-[#d18c52] via-[#e09660] to-[#d18c52] bg-clip-text text-transparent">
-                About Home Security
+                Made Simple
               </span>
             </h1>
             
             <p className="text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed font-light">
-              Professional smart home installation, 24/7 monitoring, and concierge support. 
-              <span className="text-[#d18c52] font-semibold"> Your peace of mind is our priority.</span>
+              Professional smart home installation, automation, and concierge support. 
+              <span className="text-[#d18c52] font-semibold"> Your comfort and convenience, our expertise.</span>
             </p>
 
             {/* Social proof stats */}
             <div className="flex flex-wrap justify-center gap-8 mb-12 text-center">
               <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
                 <div className="text-3xl font-bold text-[#d18c52]">10,000+</div>
-                <div className="text-lg text-gray-300">Protected Homes</div>
+                <div className="text-lg text-gray-300">Smart Homes</div>
               </div>
               <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
                 <div className="text-3xl font-bold text-[#d18c52]">99.9%</div>
@@ -111,7 +111,7 @@ export default function HomePage() {
             {/* Enhanced CTAs */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Link href="/book-consultation" className="group bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-12 py-6 rounded-xl text-2xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center shadow-2xl hover:shadow-[#d18c52]/25">
-                Secure My Home Now
+                Start My Smart Home
                 <ArrowRight className="ml-3 w-7 h-7 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link href="/packages" className="group border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-xl text-2xl font-bold hover:bg-[#d18c52] hover:text-white transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
@@ -128,7 +128,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center space-x-2">
                 <Shield className="w-6 h-6 text-[#d18c52]" />
-                <span className="text-lg">UL Certified</span>
+                <span className="text-lg">Smart Home Certified</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Users className="w-6 h-6 text-[#d18c52]" />
@@ -194,10 +194,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-              Choose Your <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Protection Level</span>
+              Choose Your <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Smart Home Experience</span>
             </h2>
             <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              From essential monitoring to full concierge service. Each package includes professional installation, 24/7 monitoring, and our peace-of-mind guarantee.
+              From essential automation to full concierge service. Each package includes professional installation, smart device integration, and our convenience guarantee.
             </p>
           </div>
           
@@ -206,38 +206,38 @@ export default function HomePage() {
             <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
-                <div className="text-center mb-6">
-                  <h3 className="text-3xl font-bold text-white mb-3">Essential</h3>
-                  <div className="text-5xl font-black text-[#d18c52] mb-2">
-                    $49<span className="text-2xl text-gray-300 font-normal">/mo</span>
-                  </div>
-                  <p className="text-lg text-gray-300">Perfect for apartments & small homes</p>
-                </div>
-                <ul className="space-y-4 mb-10">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Up to 8 smart devices</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Basic intrusion detection</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Mobile app access</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Email & chat support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Monthly health check</span>
-                  </li>
-                </ul>
-                <Link href="/packages/essential" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
-                  Start Essential Protection
-                </Link>
+                                 <div className="text-center mb-6">
+                   <h3 className="text-3xl font-bold text-white mb-3">Essential</h3>
+                   <div className="text-5xl font-black text-[#d18c52] mb-2">
+                     $49<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                   </div>
+                   <p className="text-lg text-gray-300">Perfect for apartments & small homes</p>
+                 </div>
+                 <ul className="space-y-4 mb-10">
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Up to 8 smart devices</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Basic automation</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Mobile app access</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Email & chat support</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Monthly system check</span>
+                   </li>
+                 </ul>
+                 <Link href="/packages/essential" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
+                   Start Essential Automation
+                 </Link>
               </div>
             </div>
 
@@ -248,42 +248,42 @@ export default function HomePage() {
               </div>
               <div className="absolute top-0 right-0 w-40 h-40 bg-[#d18c52]/10 rounded-full -translate-y-20 translate-x-20"></div>
               <div className="relative">
-                <div className="text-center mb-6">
-                  <h3 className="text-3xl font-bold text-white mb-3">Premium</h3>
-                  <div className="text-5xl font-black text-[#d18c52] mb-2">
-                    $99<span className="text-2xl text-gray-300 font-normal">/mo</span>
-                  </div>
-                  <p className="text-lg text-gray-300">Complete home security & automation</p>
-                </div>
-                <ul className="space-y-4 mb-10">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Up to 20 smart devices</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Advanced AI monitoring</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Priority phone support</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Family sharing (5 members)</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Bi-weekly check-ins</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Custom automation rules</span>
-                  </li>
-                </ul>
-                <Link href="/packages/premium" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 shadow-lg">
-                  Start Premium Protection
-                </Link>
+                                 <div className="text-center mb-6">
+                   <h3 className="text-3xl font-bold text-white mb-3">Premium</h3>
+                   <div className="text-5xl font-black text-[#d18c52] mb-2">
+                     $99<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                   </div>
+                   <p className="text-lg text-gray-300">Complete home automation & convenience</p>
+                 </div>
+                 <ul className="space-y-4 mb-10">
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Up to 20 smart devices</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Advanced AI automation</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Priority phone support</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Family sharing (5 members)</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Bi-weekly check-ins</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Custom automation rules</span>
+                   </li>
+                 </ul>
+                 <Link href="/packages/premium" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 shadow-lg">
+                   Start Premium Automation
+                 </Link>
               </div>
             </div>
 
@@ -291,42 +291,42 @@ export default function HomePage() {
             <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
-                <div className="text-center mb-6">
-                  <h3 className="text-3xl font-bold text-white mb-3">Concierge</h3>
-                  <div className="text-5xl font-black text-[#d18c52] mb-2">
-                    $199<span className="text-2xl text-gray-300 font-normal">/mo</span>
-                  </div>
-                  <p className="text-lg text-gray-300">Luxury service for discerning clients</p>
-                </div>
-                <ul className="space-y-4 mb-10">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Unlimited smart devices</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">AI-powered threat detection</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">24/7 dedicated concierge</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Family sharing (unlimited)</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Weekly check-ins</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                    <span className="text-lg text-white">Custom integrations</span>
-                  </li>
-                </ul>
-                <Link href="/packages/concierge" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
-                  Start Concierge Service
-                </Link>
+                                 <div className="text-center mb-6">
+                   <h3 className="text-3xl font-bold text-white mb-3">Concierge</h3>
+                   <div className="text-5xl font-black text-[#d18c52] mb-2">
+                     $199<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                   </div>
+                   <p className="text-lg text-gray-300">Luxury smart home experience</p>
+                 </div>
+                 <ul className="space-y-4 mb-10">
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Unlimited smart devices</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">AI-powered automation</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">24/7 dedicated concierge</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Family sharing (unlimited)</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Weekly check-ins</span>
+                   </li>
+                   <li className="flex items-center">
+                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
+                     <span className="text-lg text-white">Custom integrations</span>
+                   </li>
+                 </ul>
+                 <Link href="/packages/concierge" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
+                   Start Concierge Experience
+                 </Link>
               </div>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function HomePage() {
               <Heart className="w-8 h-8 text-[#d18c52] mr-4" />
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2">30-Day Money-Back Guarantee</h3>
-                <p className="text-lg text-gray-300">Not satisfied? Get a full refund, no questions asked.</p>
+                <p className="text-lg text-gray-300">Not satisfied with your smart home experience? Get a full refund, no questions asked.</p>
               </div>
             </div>
           </div>
@@ -349,13 +349,13 @@ export default function HomePage() {
 
       {/* Enhanced Call to Action */}
       <section className="py-24 bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-8">
-            Ready to <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Secure Your Future</span>?
-          </h2>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed">
-            Join 10,000+ families who trust Dwella with their peace of mind.
-          </p>
+                  <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8">
+              Ready to <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Transform Your Home</span>?
+            </h2>
+            <p className="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed">
+              Join 10,000+ families who trust Dwella with their smart home experience.
+            </p>
           
           {/* Urgency elements */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
