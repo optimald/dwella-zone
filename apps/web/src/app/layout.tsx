@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import StructuredData from "./structured-data";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -8,9 +9,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dwella - Peace of Mind at Home",
-  description: "Premium smart home service for those who value security, simplicity, and peace of mind. Installed, Supported, Protected.",
-  keywords: ["smart home", "home security", "home automation", "monitoring", "installation", "support"],
+  title: "Dwella - Premium Smart Home Security & Automation Services | Peace of Mind at Home",
+  description: "Professional smart home installation, monitoring, and support services. Licensed, insured, and trusted by homeowners for complete home security and automation. Get peace of mind with 24/7 support.",
+  keywords: [
+    "smart home security",
+    "home automation installation", 
+    "smart home monitoring",
+    "home security systems",
+    "smart home support",
+    "home automation services",
+    "smart home technology",
+    "home security installation",
+    "smart home maintenance",
+    "home automation support",
+    "smart home consultation",
+    "home security monitoring",
+    "smart home packages",
+    "home automation packages"
+  ],
   authors: [{ name: "Dwella", url: "https://dwella.zone" }],
   creator: "Dwella",
   publisher: "Dwella",
@@ -24,16 +40,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Dwella - Peace of Mind at Home",
-    description: "Premium smart home service for those who value security, simplicity, and peace of mind.",
+    title: "Dwella - Premium Smart Home Security & Automation Services",
+    description: "Professional smart home installation, monitoring, and support services. Licensed, insured, and trusted by homeowners for complete home security and automation.",
     url: "https://dwella.zone",
     siteName: "Dwella",
     images: [
       {
-        url: "/logo.png",
+        url: "/dwell_zone_logo.png",
         width: 1200,
         height: 630,
-        alt: "Dwella - Smart Home Security",
+        alt: "Dwella - Professional Smart Home Security Services",
       },
     ],
     locale: "en_US",
@@ -41,9 +57,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dwella - Peace of Mind at Home",
-    description: "Premium smart home service for those who value security, simplicity, and peace of mind.",
-    images: ["/logo.png"],
+    title: "Dwella - Premium Smart Home Security & Automation Services",
+    description: "Professional smart home installation, monitoring, and support services. Get peace of mind with 24/7 support.",
+    images: ["/dwell_zone_logo.png"],
+    creator: "@dwella",
   },
   robots: {
     index: true,
@@ -62,19 +79,23 @@ export const metadata: Metadata = {
   category: "technology",
   icons: {
     icon: [
-      { url: "/icon.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon.png", sizes: "16x16", type: "image/png" },
+      { url: "/dwell_zone_icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/dwell_zone_icon.png", sizes: "16x16", type: "image/png" },
     ],
     apple: [
-      { url: "/icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/dwell_zone_icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/icon.png",
+    shortcut: "/dwell_zone_icon.png",
   },
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "Dwella",
+  },
+  other: {
+    "theme-color": "#161C20",
+    "msapplication-TileColor": "#161C20",
   },
 };
 
@@ -85,6 +106,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <StructuredData />
+      </head>
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>

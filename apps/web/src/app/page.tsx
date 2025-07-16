@@ -16,28 +16,29 @@ export default function HomePage() {
                 width={48}
                 height={48}
                 className="w-12 h-12"
+                priority
               />
               <span className="text-3xl font-bold text-white">
                 Dwella
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-10">
-              <Link href="/packages" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
+              <Link href="/packages" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 Packages
               </Link>
-              <Link href="/why-dwella" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
+              <Link href="/why-dwella" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 Why Dwella
               </Link>
-              <Link href="/support" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
+              <Link href="/support" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 Support
               </Link>
-              <Link href="/about" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
+              <Link href="/about" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 About
               </Link>
-              <Link href="/portal" className="text-xl text-[#d18c52] hover:text-[#e09660] font-medium transition-colors">
+              <Link href="/portal" className="text-xl text-[#d18c52] hover:text-[#e09660] font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 Client Login
               </Link>
-              <Link href="/book-consultation" className="bg-[#d18c52] text-white px-8 py-3 rounded-lg text-xl hover:bg-[#e09660] transition-all duration-300">
+              <Link href="/book-consultation" className="bg-[#d18c52] text-white px-8 py-3 rounded-lg text-xl hover:bg-[#e09660] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#d18c52]">
                 Book Consultation
               </Link>
             </div>
@@ -56,6 +57,9 @@ export default function HomePage() {
                 width={160}
                 height={160}
                 className="mx-auto mb-8 drop-shadow-lg"
+                priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
             </div>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight">
