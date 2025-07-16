@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import StructuredData from "./structured-data";
 import Analytics from "./analytics";
 import ServiceWorkerRegistration from "./service-worker";
 import PerformanceMonitor from "./performance-monitor";
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "Dwella - Smart Home Security & Automation | 24/7 Monitoring",
@@ -108,11 +102,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <head>
         <StructuredData />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className="antialiased">
         <Analytics />
         <ServiceWorkerRegistration />
         <PerformanceMonitor />

@@ -201,9 +201,9 @@ export default function HomePage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
             {/* Essential Package */}
-            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-6 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
                                  <div className="text-center mb-6">
@@ -211,7 +211,7 @@ export default function HomePage() {
                    <div className="text-5xl font-black text-[#d18c52] mb-2">
                      $49<span className="text-2xl text-gray-300 font-normal">/mo</span>
                    </div>
-                   <p className="text-lg text-gray-300">Perfect for apartments & small homes</p>
+                   <p className="text-lg text-gray-300 leading-relaxed">Perfect for apartments & small homes</p>
                  </div>
                  <ul className="space-y-4 mb-10">
                    <li className="flex items-center">
@@ -235,14 +235,14 @@ export default function HomePage() {
                      <span className="text-lg text-white">Monthly system check</span>
                    </li>
                  </ul>
-                 <Link href="/packages/essential" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
+                 <Link href="/packages/essential" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 text-center whitespace-nowrap">
                    Start Essential Automation
                  </Link>
               </div>
             </div>
 
             {/* Premium Package - Featured */}
-            <div className="group bg-gradient-to-br from-[#d18c52]/10 to-[#e09660]/10 rounded-2xl p-10 shadow-2xl hover:shadow-[#d18c52]/25 transition-all duration-300 border-2 border-[#d18c52] relative overflow-hidden scale-105">
+            <div className="group bg-gradient-to-br from-[#d18c52]/10 to-[#e09660]/10 rounded-2xl p-6 lg:p-10 shadow-2xl hover:shadow-[#d18c52]/25 transition-all duration-300 border-2 border-[#d18c52] relative overflow-hidden lg:scale-105">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-8 py-3 rounded-full text-xl font-bold shadow-lg">MOST POPULAR</span>
               </div>
@@ -253,7 +253,7 @@ export default function HomePage() {
                    <div className="text-5xl font-black text-[#d18c52] mb-2">
                      $99<span className="text-2xl text-gray-300 font-normal">/mo</span>
                    </div>
-                   <p className="text-lg text-gray-300">Complete home automation & convenience</p>
+                   <p className="text-lg text-gray-300 leading-relaxed">Complete home automation & convenience</p>
                  </div>
                  <ul className="space-y-4 mb-10">
                    <li className="flex items-center">
@@ -281,14 +281,14 @@ export default function HomePage() {
                      <span className="text-lg text-white">Custom automation rules</span>
                    </li>
                  </ul>
-                 <Link href="/packages/premium" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 shadow-lg">
+                 <Link href="/packages/premium" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 shadow-lg text-center whitespace-nowrap">
                    Start Premium Automation
                  </Link>
               </div>
             </div>
 
             {/* Concierge Package */}
-            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-6 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
                                  <div className="text-center mb-6">
@@ -296,7 +296,7 @@ export default function HomePage() {
                    <div className="text-5xl font-black text-[#d18c52] mb-2">
                      $199<span className="text-2xl text-gray-300 font-normal">/mo</span>
                    </div>
-                   <p className="text-lg text-gray-300">Luxury smart home experience</p>
+                   <p className="text-lg text-gray-300 leading-relaxed">Luxury smart home experience</p>
                  </div>
                  <ul className="space-y-4 mb-10">
                    <li className="flex items-center">
@@ -324,7 +324,7 @@ export default function HomePage() {
                      <span className="text-lg text-white">Custom integrations</span>
                    </li>
                  </ul>
-                 <Link href="/packages/concierge" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105">
+                 <Link href="/packages/concierge" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 text-center whitespace-nowrap">
                    Start Concierge Experience
                  </Link>
               </div>
