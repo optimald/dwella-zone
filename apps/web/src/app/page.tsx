@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook } from "lucide-react";
+import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
   return (
@@ -240,6 +241,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials />
 
       {/* Call to Action */}
       <section className="py-24 bg-[#161C20]">

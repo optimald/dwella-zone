@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import StructuredData from "./structured-data";
+import Analytics from "./analytics";
+import ServiceWorkerRegistration from "./service-worker";
+import PerformanceMonitor from "./performance-monitor";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -110,6 +113,9 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <Analytics />
+        <ServiceWorkerRegistration />
+        <PerformanceMonitor />
         {children}
       </body>
     </html>

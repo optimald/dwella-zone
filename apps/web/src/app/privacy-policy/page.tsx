@@ -151,14 +151,54 @@ export default function PrivacyPolicy() {
                   We implement industry-standard security measures to protect your personal information, including:
                 </p>
                 <ul className="list-disc pl-6 space-y-3">
-                  <li>Encryption of data in transit and at rest</li>
-                  <li>Secure authentication and access controls</li>
-                  <li>Regular security audits and monitoring</li>
-                  <li>Employee training on data protection practices</li>
-                  <li>Compliance with applicable data protection regulations</li>
+                  <li>End-to-end encryption of data in transit and at rest using AES-256</li>
+                  <li>Multi-factor authentication and secure access controls</li>
+                  <li>Regular security audits, penetration testing, and monitoring</li>
+                  <li>Comprehensive employee training on data protection practices</li>
+                  <li>Compliance with GDPR, CCPA, and other applicable regulations</li>
+                  <li>Secure data centers with 24/7 monitoring and backup systems</li>
+                  <li>Regular security updates and vulnerability assessments</li>
                 </ul>
                 <p>
                   While we strive to protect your information, no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security but are committed to maintaining the highest standards of data protection.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-semibold text-white mb-6">6. Data Retention and Deletion</h2>
+              <div className="space-y-4 text-xl leading-relaxed">
+                <p>
+                  We retain your personal information only for as long as necessary to fulfill the purposes outlined in this policy:
+                </p>
+                <ul className="list-disc pl-6 space-y-3">
+                  <li><strong>Account Data:</strong> Retained for the duration of your active account plus 7 years for legal compliance</li>
+                  <li><strong>Service Data:</strong> Retained for 5 years after service termination for support and warranty purposes</li>
+                  <li><strong>Security Logs:</strong> Retained for 2 years for security monitoring and incident response</li>
+                  <li><strong>Marketing Data:</strong> Retained until you opt out or for 3 years, whichever comes first</li>
+                  <li><strong>Analytics Data:</strong> Anonymized after 26 months and deleted after 38 months</li>
+                </ul>
+                <p>
+                  You may request deletion of your personal information at any time by contacting us at <a href="mailto:privacy@dwella.zone" className="text-[#d18c52] hover:underline">privacy@dwella.zone</a>. We will process your request within 30 days, subject to legal requirements.
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-semibold text-white mb-6">7. Third-Party Services and Data Sharing</h2>
+              <div className="space-y-4 text-xl leading-relaxed">
+                <p>
+                  We may share your information with trusted third-party service providers who assist us in operating our services:
+                </p>
+                <ul className="list-disc pl-6 space-y-3">
+                  <li><strong>Payment Processors:</strong> Stripe for secure payment processing</li>
+                  <li><strong>Cloud Services:</strong> Supabase for database and authentication services</li>
+                  <li><strong>Communication:</strong> Twilio for SMS and voice communications</li>
+                  <li><strong>Analytics:</strong> Google Analytics for website performance monitoring</li>
+                  <li><strong>Support:</strong> Zendesk for customer support management</li>
+                </ul>
+                <p>
+                  All third-party providers are contractually bound to protect your data and use it only for specified purposes. We do not sell, rent, or trade your personal information to third parties for marketing purposes.
                 </p>
               </div>
             </section>
