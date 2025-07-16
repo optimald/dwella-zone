@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function PrivacyPolicy() {
   return (
@@ -8,7 +9,7 @@ export default function PrivacyPolicy() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <Link href="/" className="flex items-center space-x-2">
-              <img src="/dwell_zone_icon.png" alt="Dwella" className="h-8 w-8" />
+              <Image src="/dwell_zone_icon.png" alt="Dwella" width={32} height={32} className="h-8 w-8" />
               <span className="text-xl font-bold text-white">Dwella</span>
             </Link>
             <div className="hidden md:block">
@@ -44,7 +45,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-3xl font-semibold text-white mb-6">1. Introduction</h2>
               <div className="space-y-4 text-xl leading-relaxed">
                 <p>
-                  Welcome to Dwella.zone ("Dwella," "we," "us," or "our"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our smart home installation and support services, website, and mobile applications.
+                  Welcome to Dwella.zone (&ldquo;Dwella,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our smart home installation and support services, website, and mobile applications.
                 </p>
                 <p>
                   At Dwella, we understand that your home is your sanctuary, and we take the responsibility of protecting your privacy seriously. This policy applies to all services provided by Dwella, including our website, mobile applications, and in-home services.
@@ -131,7 +132,7 @@ export default function PrivacyPolicy() {
 
                   <div>
                     <h3 className="text-2xl font-semibold text-[#d18c52] mb-3">4.2 Family Members and Authorized Users</h3>
-                    <p className="text-xl leading-relaxed">With your explicit consent, we may share account information with family members or caregivers you've authorized to access your account.</p>
+                    <p className="text-xl leading-relaxed">With your explicit consent, we may share account information with family members or caregivers you&apos;ve authorized to access your account.</p>
                   </div>
 
                   <div>
@@ -216,9 +217,9 @@ export default function PrivacyPolicy() {
               </div>
             </section>
 
-            {/* Children's Privacy */}
+            {/* Children&apos;s Privacy */}
             <section>
-              <h2 className="text-3xl font-semibold text-white mb-6">9. Children's Privacy</h2>
+              <h2 className="text-3xl font-semibold text-white mb-6">9. Children&apos;s Privacy</h2>
               <div className="space-y-4 text-xl leading-relaxed">
                 <p>
                   Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information promptly.
@@ -274,7 +275,7 @@ export default function PrivacyPolicy() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                <img src="/dwell_zone_icon.png" alt="Dwella" className="h-8 w-8" />
+                <Image src="/dwell_zone_icon.png" alt="Dwella" width={32} height={32} className="h-8 w-8" />
                 <span className="text-xl font-bold text-white">Dwella</span>
               </div>
               <p className="text-lg text-gray-300">
