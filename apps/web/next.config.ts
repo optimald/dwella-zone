@@ -2,9 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Performance optimizations
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
+  // experimental: {
+  //   optimizePackageImports: ['lucide-react'],
+  // },
 
   async headers() {
     return [
@@ -83,6 +83,19 @@ const nextConfig: NextConfig = {
         pathname: '/chart/**',
       },
     ],
+  },
+
+  // Webpack configuration to resolve module loading issues
+  webpack: (config, { isServer }) => {
+    // Ensure proper module resolution
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      net: false,
+      tls: false,
+    };
+    
+    return config;
   },
 };
 
