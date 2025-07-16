@@ -260,7 +260,7 @@ export default function HomePage() {
               <Phone className="ml-3 w-7 h-7" />
             </Link>
             <Link href="/contact" className="border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-lg text-2xl font-semibold hover:bg-[#d18c52] hover:text-white transition-all duration-300">
-              Contact Us
+              Contact Support Team
             </Link>
           </div>
         </div>
@@ -285,14 +285,15 @@ export default function HomePage() {
                 Premium smart home service for those who value security, simplicity, and peace of mind.
               </p>
               <div className="flex space-x-6">
-                <a 
-                  href="https://www.facebook.com/dwellazone" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-[#d18c52] transition-colors"
-                >
-                  <Facebook className="w-8 h-8" />
-                </a>
+                              <a 
+                href="https://www.facebook.com/dwellazone" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#d18c52] transition-colors"
+                aria-label="Follow Dwella on Facebook"
+              >
+                <Facebook className="w-8 h-8" />
+              </a>
               </div>
               <div className="mt-8">
                 <p className="text-xl text-gray-300">

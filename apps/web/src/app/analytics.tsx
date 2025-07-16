@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, Suspense } from 'react';
 
 // Google Analytics 4 Configuration
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with actual GA4 ID
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX';
 
 // Custom event tracking
 export const trackEvent = (eventName: string, parameters?: Record<string, unknown>) => {

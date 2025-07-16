@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dwella - Premium Smart Home Security & Automation Services | Peace of Mind at Home",
-  description: "Professional smart home installation, monitoring, and support services. Licensed, insured, and trusted by homeowners for complete home security and automation. Get peace of mind with 24/7 support.",
+  title: "Dwella - Smart Home Security & Automation | 24/7 Monitoring",
+  description: "Professional smart home security installation and monitoring. Licensed, insured, 24/7 support. Get peace of mind with complete home automation and security.",
   keywords: [
     "smart home security",
     "home automation installation", 

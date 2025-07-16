@@ -203,6 +203,24 @@ export default function PrivacyPolicy() {
               </div>
             </section>
 
+            <section>
+              <h2 className="text-3xl font-semibold text-white mb-6">8. Cookie Policy and Consent Management</h2>
+              <div className="space-y-4 text-xl leading-relaxed">
+                <p>
+                  We use cookies and similar technologies to enhance your experience on our website:
+                </p>
+                <ul className="list-disc pl-6 space-y-3">
+                  <li><strong>Essential Cookies:</strong> Required for basic website functionality and security</li>
+                  <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our website</li>
+                  <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+                  <li><strong>Marketing Cookies:</strong> Used for targeted advertising (only with your consent)</li>
+                </ul>
+                <p>
+                  You can manage your cookie preferences at any time through your browser settings or our cookie consent banner. We respect your choices and will only use non-essential cookies with your explicit consent.
+                </p>
+              </div>
+            </section>
+
             {/* Data Retention */}
             <section>
               <h2 className="text-3xl font-semibold text-white mb-6">6. Data Retention</h2>
