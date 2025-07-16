@@ -80,6 +80,7 @@ const config: Config = {
           secondary: '#f8fafc',
           tertiary: '#f1f5f9',
           dark: '#0f172a',
+          dwella: '#161C20',
         },
         foreground: {
           DEFAULT: '#0f172a',
