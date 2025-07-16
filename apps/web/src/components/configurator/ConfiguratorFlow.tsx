@@ -5,6 +5,7 @@ import { useConfiguratorStore } from '@/stores/configuratorStore';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import QuestionCard from './QuestionCard';
 import ProgressBar from './ProgressBar';
+import { configuratorQuestions } from '@/lib/configurator/schema';
 
 export default function ConfiguratorFlow() {
   const {
@@ -20,7 +21,7 @@ export default function ConfiguratorFlow() {
 
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const currentQuestion = getCurrentQuestion();
-  const totalQuestions = 10; // Based on our schema
+  const totalQuestions = configuratorQuestions.length;
 
   const handleSingleSelect = (optionId: string) => {
     setAnswer(currentQuestion!.id, optionId);
@@ -90,7 +91,7 @@ export default function ConfiguratorFlow() {
         <button
           onClick={handleBack}
           disabled={currentQuestionIndex === 0}
-          className="flex items-center space-x-2 px-6 py-3 text-secondary-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center space-x-2 px-6 py-3 text-slate-300 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
           <span>Back</span>
@@ -101,7 +102,7 @@ export default function ConfiguratorFlow() {
             <button
               onClick={() => setShowSummary(true)}
               disabled={!canContinue}
-              className="flex items-center space-x-2 px-8 py-3 bg-primary-500 text-white rounded-xl hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center space-x-2 px-8 py-3 bg-dwella-gold text-slate-900 rounded-xl hover:bg-dwella-gold/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold"
             >
               <span>See My Configuration</span>
               <ChevronRight className="w-5 h-5" />
@@ -110,7 +111,7 @@ export default function ConfiguratorFlow() {
             <button
               onClick={handleContinue}
               disabled={!canContinue}
-              className="flex items-center space-x-2 px-8 py-3 bg-primary-500 text-white rounded-xl hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex items-center space-x-2 px-8 py-3 bg-dwella-gold text-slate-900 rounded-xl hover:bg-dwella-gold/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold"
             >
               <span>Continue</span>
               <ChevronRight className="w-5 h-5" />
@@ -124,7 +125,7 @@ export default function ConfiguratorFlow() {
         <div className="text-center">
           <button
             onClick={handleContinue}
-            className="text-secondary-400 hover:text-white text-sm transition-colors"
+            className="text-slate-400 hover:text-white text-sm transition-colors"
           >
             Skip this question
           </button>

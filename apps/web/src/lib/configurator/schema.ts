@@ -17,6 +17,7 @@ export interface ConfiguratorOption {
   id: string;
   label: string;
   description?: string;
+  icon?: string;
   tags: string[];
   image?: string;
   price?: number;
@@ -95,30 +96,35 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'apartment',
         label: 'Apartment / Condo',
         description: 'Single unit in a multi-unit building',
+        icon: '🏢',
         tags: ['apartment', 'small_space', 'shared_building']
       },
       {
         id: 'single_family',
         label: 'Single-Family Home',
         description: 'Detached house with yard',
+        icon: '🏠',
         tags: ['single_family', 'medium_space', 'private_property']
       },
       {
         id: 'estate',
         label: 'Large Estate / Mansion',
         description: 'Large home with extensive property',
+        icon: '🏰',
         tags: ['estate', 'large_space', 'luxury', 'multiple_zones']
       },
       {
         id: 'multi_unit',
         label: 'Multi-Unit Property',
         description: 'Landlord or property manager',
+        icon: '🏘️',
         tags: ['multi_unit', 'landlord', 'multiple_units']
       },
       {
         id: 'vacation',
         label: 'Vacation / Rental Property',
         description: 'Second home or rental property',
+        icon: '🏖️',
         tags: ['vacation', 'rental', 'remote_monitoring']
       }
     ]
@@ -133,21 +139,25 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
       {
         id: 'under_1000',
         label: 'Under 1,000 sq ft',
+        icon: '📏',
         tags: ['small_home', '1-2_bedrooms', 'minimal_devices']
       },
       {
         id: '1000_2000',
         label: '1,000 - 2,000 sq ft',
+        icon: '📐',
         tags: ['medium_home', '2-3_bedrooms', 'standard_coverage']
       },
       {
         id: '2000_4000',
         label: '2,000 - 4,000 sq ft',
+        icon: '📊',
         tags: ['large_home', '3-4_bedrooms', 'extended_coverage']
       },
       {
         id: 'over_4000',
         label: 'Over 4,000 sq ft',
+        icon: '🏛️',
         tags: ['estate_home', '4+_bedrooms', 'comprehensive_coverage']
       }
     ]
@@ -162,16 +172,19 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
       {
         id: 'single_floor',
         label: 'Single Floor',
+        icon: '➖',
         tags: ['single_floor', 'simple_layout']
       },
       {
         id: 'two_floors',
         label: 'Two Floors',
+        icon: '⬆️',
         tags: ['two_floors', 'staircase', 'multi_level']
       },
       {
         id: 'three_plus_floors',
         label: 'Three or More Floors',
+        icon: '🏢',
         tags: ['multi_floor', 'complex_layout', 'elevator']
       }
     ]
@@ -187,42 +200,49 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'apple_home',
         label: 'Apple HomeKit',
         description: 'Home app, Siri, Apple TV',
+        icon: '🍎',
         tags: ['apple_ecosystem', 'homekit', 'ios_integration']
       },
       {
         id: 'google_home',
         label: 'Google Home / Nest',
         description: 'Google Assistant, Nest devices',
+        icon: '🔍',
         tags: ['google_ecosystem', 'nest', 'android_integration']
       },
       {
         id: 'alexa',
         label: 'Amazon Alexa',
         description: 'Echo devices, Alexa voice control',
+        icon: '📢',
         tags: ['amazon_ecosystem', 'alexa', 'voice_control']
       },
       {
         id: 'smartthings',
         label: 'Samsung SmartThings',
         description: 'SmartThings hub and devices',
+        icon: '📱',
         tags: ['samsung_ecosystem', 'smartthings', 'universal']
       },
       {
         id: 'ring',
         label: 'Ring Security',
         description: 'Ring doorbells, cameras, alarm',
+        icon: '🔔',
         tags: ['ring_security', 'amazon', 'existing_security']
       },
       {
         id: 'ecobee',
         label: 'Ecobee Thermostat',
         description: 'Smart thermostat',
+        icon: '🌡️',
         tags: ['ecobee', 'climate_control', 'existing_thermostat']
       },
       {
         id: 'none',
         label: 'No existing smart devices',
         description: 'Starting fresh',
+        icon: '🆕',
         tags: ['new_setup', 'no_existing_devices']
       }
     ]
@@ -238,24 +258,28 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'ios',
         label: 'iOS / Apple',
         description: 'iPhone, iPad, Mac',
+        icon: '📱',
         tags: ['ios_preference', 'apple_ecosystem', 'homekit_optimized']
       },
       {
         id: 'android',
         label: 'Android / Google',
         description: 'Android phone, Google services',
+        icon: '🤖',
         tags: ['android_preference', 'google_ecosystem', 'nest_optimized']
       },
       {
         id: 'mixed',
         label: 'Mixed Platform',
         description: 'Both iOS and Android users',
+        icon: '🔄',
         tags: ['mixed_platform', 'universal_compatibility', 'cross_platform']
       },
       {
         id: 'voice_first',
         label: 'Voice-First',
         description: 'Primarily voice control',
+        icon: '🎤',
         tags: ['voice_first', 'alexa_optimized', 'hands_free']
       }
     ]
@@ -271,42 +295,49 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'outdoor_cameras',
         label: 'Outdoor Cameras',
         description: 'Monitor your property perimeter',
+        icon: '📹',
         tags: ['outdoor_security', 'video_monitoring', 'perimeter_protection']
       },
       {
         id: 'doorbell_camera',
         label: 'Video Doorbell',
         description: 'See who\'s at your door',
+        icon: '🔔',
         tags: ['doorbell_camera', 'visitor_monitoring', 'package_delivery']
       },
       {
         id: 'door_sensors',
         label: 'Door & Window Sensors',
         description: 'Know when doors/windows open',
+        icon: '🚪',
         tags: ['entry_monitoring', 'glass_break', 'intrusion_detection']
       },
       {
         id: 'smart_locks',
         label: 'Smart Locks',
         description: 'Keyless entry and remote access',
+        icon: '🔐',
         tags: ['smart_locks', 'keyless_entry', 'remote_access']
       },
       {
         id: 'motion_sensors',
         label: 'Motion Sensors',
         description: 'Detect movement inside and out',
+        icon: '👁️',
         tags: ['motion_detection', 'presence_sensing', 'activity_monitoring']
       },
       {
         id: 'fire_safety',
         label: 'Fire & CO2 Detection',
         description: 'Smoke and carbon monoxide monitoring',
+        icon: '🔥',
         tags: ['fire_safety', 'co2_monitoring', 'life_safety']
       },
       {
         id: 'professional_monitoring',
         label: 'Professional Monitoring',
         description: '24/7 monitoring with emergency response',
+        icon: '🛡️',
         tags: ['professional_monitoring', 'emergency_response', 'peace_of_mind']
       }
     ]
@@ -322,36 +353,42 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'smart_thermostat',
         label: 'Smart Thermostat',
         description: 'Automated climate control',
+        icon: '🌡️',
         tags: ['climate_control', 'energy_savings', 'comfort_automation']
       },
       {
         id: 'smart_lighting',
         label: 'Smart Lighting',
         description: 'Automated and voice-controlled lights',
+        icon: '💡',
         tags: ['lighting_automation', 'voice_control', 'mood_lighting']
       },
       {
         id: 'smart_blinds',
         label: 'Smart Blinds & Shades',
         description: 'Automated window coverings',
+        icon: '🪟',
         tags: ['window_automation', 'privacy_control', 'energy_efficiency']
       },
       {
         id: 'smart_plugs',
         label: 'Smart Plugs',
         description: 'Control any electrical device',
+        icon: '🔌',
         tags: ['device_control', 'energy_monitoring', 'appliance_automation']
       },
       {
         id: 'whole_home_audio',
         label: 'Whole Home Audio',
         description: 'Music throughout your home',
+        icon: '🎵',
         tags: ['audio_system', 'entertainment', 'multi_room_audio']
       },
       {
         id: 'garage_automation',
         label: 'Garage Door Automation',
         description: 'Smart garage door control',
+        icon: '🚗',
         tags: ['garage_automation', 'vehicle_access', 'security_integration']
       }
     ]
@@ -367,30 +404,35 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'elderly_care',
         label: 'Elderly Family Member',
         description: 'Monitoring and assistance for seniors',
+        icon: '👴',
         tags: ['elderly_care', 'fall_detection', 'health_monitoring', 'family_safety']
       },
       {
         id: 'remote_monitoring',
         label: 'Remote Monitoring',
         description: 'Check on home while away',
+        icon: '📱',
         tags: ['remote_monitoring', 'travel_safety', 'property_monitoring']
       },
       {
         id: 'wellness_checks',
         label: 'Wellness Monitoring',
         description: 'Daily activity and health tracking',
+        icon: '❤️',
         tags: ['wellness_monitoring', 'activity_tracking', 'health_insights']
       },
       {
         id: 'pet_monitoring',
         label: 'Pet Monitoring',
         description: 'Keep an eye on your pets',
+        icon: '🐕',
         tags: ['pet_monitoring', 'pet_safety', 'pet_care']
       },
       {
         id: 'medical_devices',
         label: 'Medical Device Integration',
         description: 'Connect medical devices and alerts',
+        icon: '🏥',
         tags: ['medical_integration', 'health_alerts', 'emergency_response']
       }
     ]
@@ -406,30 +448,35 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'standard_isp',
         label: 'Standard ISP',
         description: 'Cable, DSL, or fiber internet',
+        icon: '🌐',
         tags: ['standard_internet', 'isp_connection', 'basic_connectivity']
       },
       {
         id: 'mesh_wifi',
         label: 'Mesh WiFi Network',
         description: 'Multiple WiFi access points',
+        icon: '📶',
         tags: ['mesh_wifi', 'extended_coverage', 'reliable_connectivity']
       },
       {
         id: 'starlink',
         label: 'Starlink Satellite',
         description: 'SpaceX satellite internet',
+        icon: '🛰️',
         tags: ['starlink', 'satellite_internet', 'rural_connectivity']
       },
       {
         id: 'backup_internet',
         label: 'Backup Internet',
         description: 'Multiple internet connections',
+        icon: '🔄',
         tags: ['backup_internet', 'redundancy', 'always_connected']
       },
       {
         id: 'needs_improvement',
         label: 'Needs Improvement',
         description: 'Current setup needs upgrading',
+        icon: '⚠️',
         tags: ['internet_upgrade', 'connectivity_issues', 'network_optimization']
       }
     ]
@@ -445,18 +492,21 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'self_install',
         label: 'Self-Installation',
         description: 'DIY setup with remote support',
+        icon: '🛠️',
         tags: ['self_install', 'diy', 'cost_effective', 'remote_support']
       },
       {
         id: 'white_glove',
         label: 'White-Glove Installation',
         description: 'Professional installation and setup',
+        icon: '👔',
         tags: ['white_glove', 'professional_install', 'full_service', 'training_included']
       },
       {
         id: 'concierge',
         label: 'Concierge Service',
         description: 'Full-service with ongoing support',
+        icon: '🎩',
         tags: ['concierge_service', 'ongoing_support', 'premium_service', '24_7_support']
       }
     ]
@@ -472,18 +522,21 @@ export const configuratorQuestions: ConfiguratorQuestion[] = [
         id: 'budget_conscious',
         label: 'Budget-Conscious',
         description: 'Essential features, cost-effective',
+        icon: '💰',
         tags: ['budget_conscious', 'essential_features', 'cost_effective']
       },
       {
         id: 'balanced',
         label: 'Balanced',
         description: 'Good value, comprehensive features',
+        icon: '⚖️',
         tags: ['balanced_budget', 'comprehensive_features', 'good_value']
       },
       {
         id: 'premium',
         label: 'Premium',
         description: 'Best available, no compromises',
+        icon: '💎',
         tags: ['premium_budget', 'best_available', 'luxury_features']
       }
     ]

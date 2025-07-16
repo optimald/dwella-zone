@@ -1,218 +1,297 @@
-'use client';
+'use client'
 
-import { useConfiguratorStore } from '@/stores/configuratorStore';
-import { 
-  ArrowLeft, 
-  Check, 
-  Star, 
-  Shield, 
-  Zap, 
-  Heart, 
-  Wrench, 
-  Settings, 
-  Wifi, 
-  WifiOff,
-  Download,
-  Mail,
-  Calendar
-} from 'lucide-react';
-import Link from 'next/link';
+import { useState } from 'react'
+import { Download, Mail, QrCode, ArrowLeft, CheckCircle } from 'lucide-react'
+import Image from 'next/image'
+import { useConfiguratorStore } from '@/stores/configuratorStore'
 
 export default function ConfiguratorSummary() {
-  const {
-    getRecommendedPlan,
-    getRecommendedPacks,
+  const { 
+    getConfiguration, 
+    getRecommendedPlan, 
+    getRecommendedPacks, 
+    resetConfigurator,
+    tags,
     totalMonthlyPrice,
-    totalInstallPrice,
-    estimatedInstallTime,
-    setShowSummary,
-    resetConfigurator
-  } = useConfiguratorStore();
+    estimatedInstallTime
+  } = useConfiguratorStore()
+  
+  const [emailSent, setEmailSent] = useState(false)
+  const [sendingEmail, setSendingEmail] = useState(false)
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
 
-  const recommendedPlan = getRecommendedPlan();
-  const recommendedPacks = getRecommendedPacks();
+  const configuration = getConfiguration()
+  const recommendedPlan = getRecommendedPlan()
+  const recommendedPacks = getRecommendedPacks()
 
-  const handleBackToQuestions = () => {
-    setShowSummary(false);
-  };
+  const handleSendEmail = async () => {
+    if (!email || !name) return
 
-  const handleStartOver = () => {
-    resetConfigurator();
-  };
+    setSendingEmail(true)
+    try {
+      const response = await fetch('/api/configurator/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          configuration: {
+            recommendedPlan: recommendedPlan?.name || 'Custom Plan',
+            estimatedCost: totalMonthlyPrice,
+            installTime: estimatedInstallTime,
+            addOnPacks: recommendedPacks.map(pack => ({
+              name: pack.name,
+              price: pack.monthlyPrice,
+              description: pack.description
+            }))
+          },
+          userEmail: email,
+          userName: name,
+        }),
+      })
 
-  const getPackIcon = (category: string) => {
-    switch (category) {
-      case 'security': return Shield;
-      case 'comfort': return Zap;
-      case 'health': return Heart;
-      case 'care': return Wrench;
-      case 'integration': return Settings;
-      case 'power': return WifiOff;
-      case 'maintenance': return Wifi;
-      default: return Star;
+      if (response.ok) {
+        setEmailSent(true)
+      } else {
+        console.error('Failed to send email')
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+    } finally {
+      setSendingEmail(false)
     }
-  };
+  }
+
+  const handleDownloadConfig = () => {
+    const configData = {
+      configuration,
+      timestamp: new Date().toISOString(),
+      version: '1.0',
+    }
+
+    const blob = new Blob([JSON.stringify(configData, null, 2)], {
+      type: 'application/json',
+    })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `dwella-config-${Date.now()}.json`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  }
+
+  const generateQRCode = () => {
+    // Generate a simple QR code URL for the configuration
+    const configUrl = `${window.location.origin}/configurator?config=${encodeURIComponent(JSON.stringify(configuration))}`
+    return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(configUrl)}`
+  }
+
+  if (!recommendedPlan) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-white mb-4">No Configuration Found</h1>
+          <p className="text-slate-300 mb-6">Please complete the configurator first.</p>
+          <button
+            onClick={resetConfigurator}
+            className="bg-dwella-gold text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-dwella-gold/90 transition-colors"
+          >
+            Start Configurator
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">
-          Your Personalized Smart Home Solution
-        </h2>
-        <p className="text-xl text-secondary-300">
-          Based on your preferences, here&apos;s what we recommend for your home.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Your Smart Home
+            <span className="text-dwella-gold block">Configuration</span>
+          </h1>
+          <p className="text-xl text-slate-300">
+            Here&apos;s your personalized smart home setup based on your preferences.
+          </p>
+        </div>
 
-      {/* Recommended Plan */}
-      {recommendedPlan && (
-        <div className="bg-gradient-to-br from-primary-500/10 to-primary-600/10 rounded-2xl p-8 border border-primary-500/20">
-          <div className="flex items-center mb-6">
-            <div className="bg-primary-500 p-3 rounded-xl mr-4">
-              <Star className="w-8 h-8 text-white" />
+        {/* Configuration Summary */}
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Configuration Summary</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-slate-700/50 rounded-xl p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">Recommended Plan</h3>
+              <p className="text-dwella-gold text-xl font-bold">{recommendedPlan.name}</p>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-white">{recommendedPlan.name}</h3>
-              <p className="text-secondary-300">{recommendedPlan.description}</p>
+            <div className="bg-slate-700/50 rounded-xl p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">Monthly Cost</h3>
+              <p className="text-dwella-gold text-xl font-bold">${totalMonthlyPrice}</p>
+            </div>
+            <div className="bg-slate-700/50 rounded-xl p-6 text-center">
+              <h3 className="text-lg font-semibold text-white mb-2">Installation Time</h3>
+              <p className="text-dwella-gold text-xl font-bold">{estimatedInstallTime}</p>
             </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-3">What&apos;s Included:</h4>
-              <ul className="space-y-2">
-                {recommendedPlan.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-secondary-300">
-                    <Check className="w-4 h-4 text-primary-500 mr-3 flex-shrink-0" />
-                    {feature}
-                  </li>
+
+          {recommendedPacks.length > 0 && (
+            <div className="mb-6">
+              <h3 className="text-xl font-bold text-white mb-4">Add-on Packs</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {recommendedPacks.map((pack, index) => (
+                  <div key={index} className="bg-slate-700/50 rounded-xl p-4 flex justify-between items-center">
+                    <div>
+                      <h4 className="text-white font-semibold">{pack.name}</h4>
+                      <p className="text-slate-300 text-sm">{pack.description}</p>
+                    </div>
+                    <span className="text-dwella-gold font-bold">${pack.monthlyPrice}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
+          )}
+
+          <div className="mb-6">
+            <h3 className="text-xl font-bold text-white mb-4">Your Preferences</h3>
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="bg-dwella-gold/20 text-dwella-gold px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* Email Configuration */}
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+            <div className="text-center mb-4">
+              <Mail className="h-12 w-12 text-dwella-gold mx-auto mb-3" />
+              <h3 className="text-lg font-bold text-white mb-2">Email Configuration</h3>
+              <p className="text-slate-300 text-sm">Get your configuration sent to your email</p>
+            </div>
+            
+            {!emailSent ? (
+              <div className="space-y-3">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:border-dwella-gold"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-slate-700 border border-slate-600 rounded-lg px-3 py-2 text-white placeholder-slate-400 focus:outline-none focus:border-dwella-gold"
+                />
+                <button
+                  onClick={handleSendEmail}
+                  disabled={!email || !name || sendingEmail}
+                  className="w-full bg-dwella-gold text-slate-900 py-2 rounded-lg font-semibold hover:bg-dwella-gold/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                >
+                  {sendingEmail ? 'Sending...' : 'Send Email'}
+                </button>
+              </div>
+            ) : (
+              <div className="text-center">
+                <CheckCircle className="h-8 w-8 text-green-400 mx-auto mb-2" />
+                <p className="text-green-400 text-sm">Email sent successfully!</p>
+              </div>
+            )}
+          </div>
+
+          {/* Download Configuration */}
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+            <div className="text-center mb-4">
+              <Download className="h-12 w-12 text-dwella-gold mx-auto mb-3" />
+              <h3 className="text-lg font-bold text-white mb-2">Download JSON</h3>
+              <p className="text-slate-300 text-sm">Save your configuration as a file</p>
+            </div>
+            <button
+              onClick={handleDownloadConfig}
+              className="w-full bg-slate-700 text-white py-2 rounded-lg font-semibold hover:bg-slate-600 transition-colors flex items-center justify-center"
+            >
+              Download Configuration
+            </button>
+          </div>
+
+          {/* QR Code */}
+          <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
+            <div className="text-center mb-4">
+              <QrCode className="h-12 w-12 text-dwella-gold mx-auto mb-3" />
+              <h3 className="text-lg font-bold text-white mb-2">QR Code</h3>
+              <p className="text-slate-300 text-sm">Scan to view this configuration</p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src={generateQRCode()}
+                alt="Configuration QR Code"
+                width={120}
+                height={120}
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Next Steps */}
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6">Next Steps</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="bg-dwella-gold/20 p-4 rounded-xl inline-block mb-4">
+                <span className="text-dwella-gold text-2xl font-bold">1</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Review Configuration</h3>
+              <p className="text-slate-300 text-sm">Our team will review your configuration and contact you within 24 hours.</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary-500 mb-2">
-                ${recommendedPlan.basePrice}<span className="text-2xl text-secondary-400 font-normal">/mo</span>
+              <div className="bg-dwella-gold/20 p-4 rounded-xl inline-block mb-4">
+                <span className="text-dwella-gold text-2xl font-bold">2</span>
               </div>
-              <p className="text-secondary-400">Base plan price</p>
+              <h3 className="text-lg font-bold text-white mb-2">Schedule Consultation</h3>
+              <p className="text-slate-300 text-sm">Book a consultation to discuss your needs and finalize the plan.</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-dwella-gold/20 p-4 rounded-xl inline-block mb-4">
+                <span className="text-dwella-gold text-2xl font-bold">3</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">Professional Installation</h3>
+              <p className="text-slate-300 text-sm">Our certified technicians will install and configure your smart home system.</p>
             </div>
           </div>
         </div>
-      )}
 
-      {/* Recommended Packs */}
-      {recommendedPacks.length > 0 && (
-        <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-white">Recommended Add-on Modules</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {recommendedPacks.map((pack) => {
-              const PackIcon = getPackIcon(pack.category);
-              return (
-                <div key={pack.id} className="bg-secondary-800/50 rounded-xl p-6 border border-secondary-700">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-primary-500/20 p-2 rounded-lg mr-3">
-                      <PackIcon className="w-6 h-6 text-primary-500" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-white">{pack.name}</h4>
-                      <p className="text-secondary-400 text-sm">{pack.description}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3 mb-4">
-                    <h5 className="text-sm font-semibold text-white">Includes:</h5>
-                    <ul className="space-y-1">
-                      {pack.devices.slice(0, 3).map((device) => (
-                        <li key={device.id} className="text-sm text-secondary-300">
-                          • {device.name}
-                        </li>
-                      ))}
-                      {pack.devices.length > 3 && (
-                        <li className="text-sm text-secondary-400">
-                          +{pack.devices.length - 3} more devices
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                  
-                  <div className="flex justify-between items-center">
-                    <div className="text-2xl font-bold text-primary-500">
-                      ${pack.monthlyPrice}<span className="text-sm text-secondary-400 font-normal">/mo</span>
-                    </div>
-                    <div className="text-sm text-secondary-400">
-                      {pack.installTime} install
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button
+            onClick={resetConfigurator}
+            className="bg-slate-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-slate-600 transition-colors flex items-center justify-center"
+          >
+            <ArrowLeft className="mr-2 w-5 h-5" />
+            Start Over
+          </button>
+          <a
+            href="/book-consultation"
+            className="bg-dwella-gold text-slate-900 px-8 py-4 rounded-xl font-semibold hover:bg-dwella-gold/90 transition-colors text-center"
+          >
+            Book Consultation
+          </a>
         </div>
-      )}
-
-      {/* Pricing Summary */}
-      <div className="bg-secondary-800/50 rounded-2xl p-8 border border-secondary-700">
-        <h3 className="text-2xl font-bold text-white mb-6">Pricing Summary</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              ${totalMonthlyPrice}
-            </div>
-            <div className="text-secondary-400">Monthly Total</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              ${totalInstallPrice}
-            </div>
-            <div className="text-secondary-400">Installation</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-primary-500 mb-2">
-              {estimatedInstallTime}
-            </div>
-            <div className="text-secondary-400">Install Time</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Action Buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Link
-          href="/book-consultation"
-          className="flex items-center justify-center space-x-2 px-8 py-4 bg-primary-500 text-white rounded-xl font-semibold hover:bg-primary-600 transition-colors"
-        >
-          <Calendar className="w-5 h-5" />
-          <span>Book Free Consultation</span>
-        </Link>
-        
-        <button className="flex items-center justify-center space-x-2 px-8 py-4 border border-secondary-600 text-white rounded-xl font-semibold hover:bg-secondary-800 transition-colors">
-          <Download className="w-5 h-5" />
-          <span>Download PDF</span>
-        </button>
-        
-        <button className="flex items-center justify-center space-x-2 px-8 py-4 border border-secondary-600 text-white rounded-xl font-semibold hover:bg-secondary-800 transition-colors">
-          <Mail className="w-5 h-5" />
-          <span>Email Quote</span>
-        </button>
-      </div>
-
-      {/* Navigation */}
-      <div className="flex justify-between items-center pt-8">
-        <button
-          onClick={handleBackToQuestions}
-          className="flex items-center space-x-2 px-6 py-3 text-secondary-300 hover:text-white transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Questions</span>
-        </button>
-        
-        <button
-          onClick={handleStartOver}
-          className="text-secondary-400 hover:text-white transition-colors"
-        >
-          Start Over
-        </button>
       </div>
     </div>
-  );
+  )
 } 

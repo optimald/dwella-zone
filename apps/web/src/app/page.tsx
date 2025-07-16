@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook, Users, Award, Heart, Lock, Bell, Calendar, ChevronRight, Puzzle, Zap, Settings, ShieldCheck, Wrench } from "lucide-react";
-import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
   return (
@@ -323,9 +322,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Enhanced Testimonials */}
-      <Testimonials />
 
       {/* Enhanced Call to Action */}
       <section className="py-24 bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]">
