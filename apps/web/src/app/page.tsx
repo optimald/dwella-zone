@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook, Users, Award, Heart, Lock, Bell, Calendar, ChevronRight } from "lucide-react";
+import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook, Users, Award, Heart, Lock, Bell, Calendar, ChevronRight, Puzzle, Zap, Settings, ShieldCheck, Wrench } from "lucide-react";
 import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
@@ -25,7 +25,7 @@ export default function HomePage() {
             </div>
             <div className="hidden md:flex items-center space-x-10">
               <Link href="/packages" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
-                Packages
+                Solutions
               </Link>
               <Link href="/why-dwella" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d18c52] focus:ring-offset-2 focus:ring-offset-[#161C20] rounded px-2 py-1">
                 Why Dwella
@@ -80,16 +80,16 @@ export default function HomePage() {
             {/* Enhanced value proposition */}
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-tight">
               <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                Your Smart Home
+                Peace of Mind
               </span>
               <span className="block bg-gradient-to-r from-[#d18c52] via-[#e09660] to-[#d18c52] bg-clip-text text-transparent">
-                Made Simple
+                at Home
               </span>
             </h1>
             
             <p className="text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed font-light">
               Professional smart home installation, automation, and concierge support. 
-              <span className="text-[#d18c52] font-semibold"> Your comfort and convenience, our expertise.</span>
+              <span className="text-[#d18c52] font-semibold"> Your confidence, coverage, and care—on your terms.</span>
             </p>
 
             {/* Social proof stats */}
@@ -115,7 +115,7 @@ export default function HomePage() {
                 <ArrowRight className="ml-3 w-7 h-7 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link href="/packages" className="group border-2 border-[#d18c52] text-[#d18c52] px-12 py-6 rounded-xl text-2xl font-bold hover:bg-[#d18c52] hover:text-white transition-all duration-300 inline-flex items-center justify-center backdrop-blur-sm">
-                Compare Packages
+                Explore Solutions
                 <ChevronRight className="ml-3 w-7 h-7 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -189,156 +189,136 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Enhanced Packages Preview */}
+      {/* New Flexible Solutions Preview */}
       <section className="py-24 bg-[#161C20]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-              Choose Your <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Smart Home Experience</span>
+              <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Flexible Solutions</span> for Your Life
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              From essential automation to full concierge service. Each package includes professional installation, smart device integration, and our convenience guarantee.
+            <p className="text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Start with our essential core foundation, then add the modules that match your priorities. 
+              <span className="text-[#d18c52] font-semibold"> Peace-as-a-Service, tailored to your needs.</span>
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-            {/* Essential Package */}
-            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-6 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+            {/* Core Foundation */}
+            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
-                                 <div className="text-center mb-6">
-                   <h3 className="text-3xl font-bold text-white mb-3">Essential</h3>
-                   <div className="text-5xl font-black text-[#d18c52] mb-2">
-                     $49<span className="text-2xl text-gray-300 font-normal">/mo</span>
-                   </div>
-                   <p className="text-lg text-gray-300 leading-relaxed">Perfect for apartments & small homes</p>
-                 </div>
-                 <ul className="space-y-4 mb-10">
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Up to 8 smart devices</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Basic automation</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Mobile app access</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Email & chat support</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Monthly system check</span>
-                   </li>
-                 </ul>
-                 <Link href="/packages/essential" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 text-center whitespace-nowrap">
-                   Start Essential Automation
-                 </Link>
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-r from-[#d18c52] to-[#e09660] p-3 rounded-xl mr-4">
+                    <ShieldCheck className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white">Core Foundation</h3>
+                    <p className="text-lg text-gray-300">Required for all solutions</p>
+                  </div>
+                </div>
+                <div className="text-4xl font-black text-[#d18c52] mb-4">
+                  $79<span className="text-2xl text-gray-300 font-normal">/mo</span>
+                </div>
+                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                  Smart hub, mobile app, professional installation, training, and essential devices to get you started.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-[#d18c52] mr-3 flex-shrink-0" />
+                    <span className="text-white">Smart home hub & mobile app</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-[#d18c52] mr-3 flex-shrink-0" />
+                    <span className="text-white">Professional installation & training</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-[#d18c52] mr-3 flex-shrink-0" />
+                    <span className="text-white">Essential smart devices (3-5)</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-[#d18c52] mr-3 flex-shrink-0" />
+                    <span className="text-white">Basic automation setup</span>
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-[#d18c52] mr-3 flex-shrink-0" />
+                    <span className="text-white">Email & chat support</span>
+                  </li>
+                </ul>
+                <Link href="/packages" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 text-center">
+                  Start with Core
+                </Link>
               </div>
             </div>
 
-            {/* Premium Package - Featured */}
-            <div className="group bg-gradient-to-br from-[#d18c52]/10 to-[#e09660]/10 rounded-2xl p-6 lg:p-10 shadow-2xl hover:shadow-[#d18c52]/25 transition-all duration-300 border-2 border-[#d18c52] relative overflow-hidden lg:scale-105">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white px-8 py-3 rounded-full text-xl font-bold shadow-lg">MOST POPULAR</span>
-              </div>
-              <div className="absolute top-0 right-0 w-40 h-40 bg-[#d18c52]/10 rounded-full -translate-y-20 translate-x-20"></div>
-              <div className="relative">
-                                 <div className="text-center mb-6">
-                   <h3 className="text-3xl font-bold text-white mb-3">Premium</h3>
-                   <div className="text-5xl font-black text-[#d18c52] mb-2">
-                     $99<span className="text-2xl text-gray-300 font-normal">/mo</span>
-                   </div>
-                   <p className="text-lg text-gray-300 leading-relaxed">Complete home automation & convenience</p>
-                 </div>
-                 <ul className="space-y-4 mb-10">
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Up to 20 smart devices</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Advanced AI automation</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Priority phone support</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Family sharing (5 members)</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Bi-weekly check-ins</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Custom automation rules</span>
-                   </li>
-                 </ul>
-                 <Link href="/packages/premium" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 shadow-lg text-center whitespace-nowrap">
-                   Start Premium Automation
-                 </Link>
-              </div>
-            </div>
-
-            {/* Concierge Package */}
-            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-6 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+            {/* Modular Add-ons */}
+            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
-                                 <div className="text-center mb-6">
-                   <h3 className="text-3xl font-bold text-white mb-3">Concierge</h3>
-                   <div className="text-5xl font-black text-[#d18c52] mb-2">
-                     $199<span className="text-2xl text-gray-300 font-normal">/mo</span>
-                   </div>
-                   <p className="text-lg text-gray-300 leading-relaxed">Luxury smart home experience</p>
-                 </div>
-                 <ul className="space-y-4 mb-10">
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Unlimited smart devices</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">AI-powered automation</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">24/7 dedicated concierge</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Family sharing (unlimited)</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Weekly check-ins</span>
-                   </li>
-                   <li className="flex items-center">
-                     <CheckCircle className="w-6 h-6 text-[#d18c52] mr-4 flex-shrink-0" />
-                     <span className="text-lg text-white">Custom integrations</span>
-                   </li>
-                 </ul>
-                 <Link href="/packages/concierge" className="block w-full bg-gradient-to-r from-[#d18c52] to-[#e09660] text-white py-4 rounded-xl text-xl font-bold hover:from-[#e09660] hover:to-[#d18c52] transition-all duration-300 transform group-hover:scale-105 text-center whitespace-nowrap">
-                   Start Concierge Experience
-                 </Link>
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-r from-[#d18c52] to-[#e09660] p-3 rounded-xl mr-4">
+                    <Puzzle className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-white">Add-on Modules</h3>
+                    <p className="text-lg text-gray-300">Choose what matters to you</p>
+                  </div>
+                </div>
+                <div className="text-4xl font-black text-[#d18c52] mb-4">
+                  $29-89<span className="text-2xl text-gray-300 font-normal">/mo each</span>
+                </div>
+                <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                  Mix and match specialized modules to create your perfect smart home experience.
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-8">
+                  <div className="bg-[#374151]/50 rounded-lg p-3">
+                    <Shield className="w-6 h-6 text-[#d18c52] mb-2" />
+                    <div className="text-sm font-semibold text-white">Security Pack</div>
+                  </div>
+                  <div className="bg-[#374151]/50 rounded-lg p-3">
+                    <Zap className="w-6 h-6 text-[#d18c52] mb-2" />
+                    <div className="text-sm font-semibold text-white">Comfort Pack</div>
+                  </div>
+                  <div className="bg-[#374151]/50 rounded-lg p-3">
+                    <Heart className="w-6 h-6 text-[#d18c52] mb-2" />
+                    <div className="text-sm font-semibold text-white">Health & Safety</div>
+                  </div>
+                  <div className="bg-[#374151]/50 rounded-lg p-3">
+                    <Settings className="w-6 h-6 text-[#d18c52] mb-2" />
+                    <div className="text-sm font-semibold text-white">Integration</div>
+                  </div>
+                </div>
+                <Link href="/packages" className="block w-full border-2 border-[#d18c52] text-[#d18c52] py-4 rounded-xl text-xl font-bold hover:bg-[#d18c52] hover:text-white transition-all duration-300 transform group-hover:scale-105 text-center">
+                  Explore Modules
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* Money-back guarantee */}
-          <div className="text-center mt-16">
-            <div className="inline-flex items-center bg-gradient-to-r from-[#d18c52]/20 to-[#e09660]/20 rounded-xl px-8 py-6 border border-[#d18c52]/30">
-              <Heart className="w-8 h-8 text-[#d18c52] mr-4" />
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">30-Day Money-Back Guarantee</h3>
-                <p className="text-lg text-gray-300">Not satisfied with your smart home experience? Get a full refund, no questions asked.</p>
-              </div>
+          {/* Module Categories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+              <Shield className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-white mb-2">Security Pack</h3>
+              <p className="text-gray-300 text-sm mb-3">Cameras, sensors, smart locks, monitoring</p>
+              <div className="text-[#d18c52] font-semibold">From $49/mo</div>
+            </div>
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+              <Zap className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-white mb-2">Comfort Pack</h3>
+              <p className="text-gray-300 text-sm mb-3">Thermostats, lighting, shades, automation</p>
+              <div className="text-[#d18c52] font-semibold">From $39/mo</div>
+            </div>
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+              <Heart className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-white mb-2">Health & Safety</h3>
+              <p className="text-gray-300 text-sm mb-3">Air quality, fall detection, emergency alerts</p>
+              <div className="text-[#d18c52] font-semibold">From $29/mo</div>
+            </div>
+            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+              <Wrench className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold text-white mb-2">Care & Support</h3>
+              <p className="text-gray-300 text-sm mb-3">24/7 monitoring, maintenance, concierge</p>
+              <div className="text-[#d18c52] font-semibold">From $89/mo</div>
             </div>
           </div>
         </div>

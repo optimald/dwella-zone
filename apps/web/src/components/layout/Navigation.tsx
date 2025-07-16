@@ -22,7 +22,7 @@ export default function Navigation() {
           </div>
           <div className="hidden md:flex items-center space-x-10">
             <Link href="/packages" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
-              Packages
+              Solutions
             </Link>
             <Link href="/why-dwella" className="text-xl text-gray-300 hover:text-[#d18c52] transition-colors">
               Why Dwella

@@ -1,4 +1,4 @@
-import { Shield, Heart, Clock, Users, Award, Zap } from 'lucide-react'
+import { Shield, Heart, Users, Award, Zap, CheckCircle, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
@@ -6,29 +6,40 @@ import Footer from '@/components/layout/Footer'
 const benefits = [
   {
     icon: Shield,
-    title: 'PeaceTech Philosophy',
-    description: 'We believe technology should enhance your life, not complicate it. Our approach focuses on creating calm, reliable systems that work seamlessly in the background.',
+    title: 'Confidence',
+    description: 'Know your home is protected and your family is safe. Our systems provide reliable monitoring and instant alerts when you need them most.',
     features: [
-      'Intuitive, simple interfaces',
-      'Reliable, always-on systems',
-      'Privacy-first design',
-      'Minimal maintenance required'
+      'Professional-grade security systems',
+      '24/7 monitoring and alerts',
+      'Instant mobile notifications',
+      'Reliable backup systems'
+    ]
+  },
+  {
+    icon: Zap,
+    title: 'Coverage',
+    description: 'Complete protection for every aspect of your home - from security and safety to comfort and convenience. No gaps, no worries.',
+    features: [
+      'Comprehensive device coverage',
+      'Multiple layers of protection',
+      'Redundant systems for reliability',
+      'Scalable to your needs'
     ]
   },
   {
     icon: Heart,
-    title: 'Caregiver Benefits',
-    description: 'Give peace of mind to family members who care for you. Remote monitoring and alerts help everyone stay connected and safe.',
+    title: 'Care',
+    description: 'Ongoing support and maintenance that adapts to your lifestyle. We\'re here when you need us, proactive when you don\'t.',
     features: [
-      'Remote access for family members',
-      'Emergency alert systems',
-      'Health and safety monitoring',
-      'Family portal with shared access'
+      'Personalized support plans',
+      'Proactive system monitoring',
+      'Regular maintenance visits',
+      'Family-friendly interfaces'
     ]
   },
   {
     icon: Award,
-    title: 'Device Quality Guarantee',
+    title: 'Quality Guarantee',
     description: 'We only install premium, reliable devices from trusted manufacturers. Every component is tested and backed by our comprehensive warranty.',
     features: [
       'Premium device selection',
@@ -36,25 +47,52 @@ const benefits = [
       'Extended warranties',
       'Free replacements for defects'
     ]
-  },
-  {
-    icon: Clock,
-    title: 'Support Response SLAs',
-    description: 'When you need help, we&apos;re there. Our tiered support system ensures you get the right level of assistance when you need it.',
-    features: [
-      'Light: 24-hour email response',
-      'Core: 4-hour phone response',
-      'Aura: 1-hour concierge response',
-      'Proactive monitoring and alerts'
-    ]
   }
 ]
 
 const stats = [
-  { number: '500+', label: 'Homes Protected' },
+  { number: '10,000+', label: 'Homes Protected' },
   { number: '99.9%', label: 'Uptime Guarantee' },
   { number: '<4hr', label: 'Average Response Time' },
   { number: '5★', label: 'Customer Rating' }
+]
+
+const supportTiers = [
+  {
+    name: 'Core Foundation',
+    response: '24 hours',
+    features: [
+      'Email & chat support',
+      'Basic troubleshooting',
+      'Monthly health checks',
+      'App updates',
+      'Security patches'
+    ]
+  },
+  {
+    name: 'With Modules',
+    response: '4 hours',
+    features: [
+      'Phone support',
+      'Remote troubleshooting',
+      'Weekly health checks',
+      'Priority updates',
+      'Device optimization',
+      'Module-specific support'
+    ]
+  },
+  {
+    name: 'Care & Support Pack',
+    response: '1 hour',
+    features: [
+      '24/7 dedicated support',
+      'Proactive monitoring',
+      'Emergency response',
+      'Concierge service',
+      'Family portal management',
+      'Scheduled maintenance'
+    ]
+  }
 ]
 
 export default function WhyDwellaPage() {
@@ -68,9 +106,23 @@ export default function WhyDwellaPage() {
             Why Choose
             <span className="text-dwella-gold block">Dwella?</span>
           </h1>
-          <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-            We&apos;re not just another smart home company. We&apos;re your partner in creating a safer, more peaceful home environment.
+          <p className="text-xl text-slate-300 mb-8 max-w-4xl mx-auto">
+            We deliver <span className="text-dwella-gold font-semibold">confidence, coverage, and care</span> through flexible smart home solutions that adapt to your life, not the other way around.
           </p>
+          <div className="flex flex-wrap justify-center gap-6 text-slate-300">
+            <div className="flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-dwella-gold" />
+              <span>Confidence</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Zap className="w-5 h-5 text-dwella-gold" />
+              <span>Coverage</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Heart className="w-5 h-5 text-dwella-gold" />
+              <span>Care</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -104,7 +156,7 @@ export default function WhyDwellaPage() {
                 <ul className="space-y-3">
                   {benefit.features.map((feature) => (
                     <li key={feature} className="flex items-center text-slate-300">
-                      <div className="w-2 h-2 bg-dwella-gold rounded-full mr-3"></div>
+                      <CheckCircle className="w-4 h-4 text-dwella-gold mr-3 flex-shrink-0" />
                       {feature}
                     </li>
                   ))}
@@ -129,8 +181,7 @@ export default function WhyDwellaPage() {
               Our PeaceTech philosophy centers around creating systems that enhance your life without demanding your attention.
             </p>
             <p>
-              We focus on reliability, simplicity, and peace of mind. Our systems work quietly in the background, 
-              protecting your home and family while you focus on what matters most.
+              We focus on <span className="text-dwella-gold font-semibold">confidence, coverage, and care</span> - delivering peace of mind through flexible solutions that adapt to your unique needs and lifestyle.
             </p>
             <p>
               Every device we install, every feature we enable, and every interaction we design is guided by one simple principle: 
@@ -140,8 +191,46 @@ export default function WhyDwellaPage() {
         </div>
       </section>
 
-      {/* Caregiver Focus */}
+      {/* Support Tiers */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Support & Care
+              <span className="text-dwella-gold block">That Scales</span>
+            </h2>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+              Choose the level of support that matches your needs. Start simple and add more care as your life evolves.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {supportTiers.map((tier, index) => (
+              <div key={tier.name} className={`bg-slate-800/50 rounded-2xl p-6 border ${
+                index === 1 ? 'border-dwella-gold shadow-lg shadow-dwella-gold/20' : 'border-slate-700'
+              }`}>
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{tier.name}</h3>
+                  <div className="text-2xl font-bold text-dwella-gold">{tier.response}</div>
+                  <div className="text-sm text-slate-400">response time</div>
+                </div>
+                
+                <ul className="space-y-3">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex items-center text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-dwella-gold mr-3 flex-shrink-0" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Caregiver Focus */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -192,6 +281,12 @@ export default function WhyDwellaPage() {
                   </p>
                   <p className="text-slate-400">— Michael R., Son</p>
                 </div>
+                <div className="border-l-4 border-dwella-gold pl-4">
+                  <p className="text-slate-300 italic mb-2">
+                    &quot;The flexible modules let us start small and add what we need as my dad&apos;s needs changed.&quot;
+                  </p>
+                  <p className="text-slate-400">— Jennifer L., Daughter</p>
+                </div>
               </div>
             </div>
           </div>
@@ -203,17 +298,18 @@ export default function WhyDwellaPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Experience
-            <span className="text-dwella-gold block">Peace of Mind?</span>
+            <span className="text-dwella-gold block">Peace-as-a-Service?</span>
           </h2>
           <p className="text-xl text-slate-300 mb-8">
-            Join hundreds of families who trust Dwella to protect and enhance their homes.
+            Join thousands of families who trust Dwella to provide confidence, coverage, and care for their homes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/packages"
-              className="bg-dwella-gold text-slate-900 px-8 py-4 rounded-xl font-semibold hover:bg-dwella-gold/90 transition-colors"
+              className="bg-dwella-gold text-slate-900 px-8 py-4 rounded-xl font-semibold hover:bg-dwella-gold/90 transition-colors inline-flex items-center"
             >
-              View Packages
+              Explore Solutions
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <Link
               href="/book-consultation"
