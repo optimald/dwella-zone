@@ -51,7 +51,7 @@ export default function HomePage() {
           <div className="text-center">
             <div className="mb-12">
               <Image
-                src="/dwell_zone_logo.png"
+                src="/dwell_zone_icon.png"
                 alt="Dwella Shield"
                 width={160}
                 height={160}
