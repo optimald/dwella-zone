@@ -1,6 +1,9 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import { Shield, Home, Wifi, Phone, Clock, CheckCircle, Star, ArrowRight, Facebook, Users, Award, Heart, Lock, Bell, Calendar, ChevronRight, Puzzle, Zap, Settings, ShieldCheck, Wrench } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
@@ -47,7 +50,13 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section - Enhanced with dynamic elements */}
-      <section className="relative text-white overflow-hidden bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8 }}
+        className="relative text-white overflow-hidden bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]"
+      >
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-72 h-72 bg-[#d18c52]/10 rounded-full blur-3xl animate-pulse"></div>
@@ -150,46 +159,82 @@ export default function HomePage() {
         <div className="absolute top-1/2 right-1/3 animate-float delay-1500">
           <Lock className="w-8 h-8 text-[#d18c52] opacity-60 drop-shadow-lg" />
         </div>
-      </section>
+      </motion.section>
 
       {/* Enhanced Trust Badges */}
-      <section className="py-16 border-b border-gray-700 bg-[#161C20]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8 }}
+        className="py-16 border-b border-gray-700 bg-[#161C20]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center group">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center group"
+            >
               <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
                 <CheckCircle className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">Licensed & Insured</h3>
                 <p className="text-gray-300">Full coverage protection</p>
               </div>
-            </div>
-            <div className="text-center group">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center group"
+            >
               <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
                 <Shield className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">Security Verified</h3>
                 <p className="text-gray-300">Industry certified</p>
               </div>
-            </div>
-            <div className="text-center group">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center group"
+            >
               <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
                 <Star className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">5-Star Rated</h3>
                 <p className="text-gray-300">Customer satisfaction</p>
               </div>
-            </div>
-            <div className="text-center group">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center group"
+            >
               <div className="bg-gradient-to-br from-[#d18c52]/20 to-[#e09660]/20 rounded-xl p-6 mb-4 group-hover:scale-105 transition-transform">
                 <Clock className="w-12 h-12 text-[#d18c52] mx-auto mb-3" />
                 <h3 className="text-xl font-bold text-white mb-2">24/7 Support</h3>
                 <p className="text-gray-300">Always here for you</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* New Flexible Solutions Preview */}
-      <section className="py-24 bg-[#161C20]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8 }}
+        className="py-24 bg-[#161C20]"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
@@ -203,7 +248,13 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
             {/* Core Foundation */}
-            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden"
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
                 <div className="flex items-center mb-6">
@@ -247,10 +298,16 @@ export default function HomePage() {
                   Start with Core
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Modular Add-ons */}
-            <div className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group bg-gradient-to-br from-[#1F2937] to-[#2D3748] rounded-2xl p-8 lg:p-10 shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#d18c52]/20 hover:border-[#d18c52] relative overflow-hidden"
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#d18c52]/5 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="relative">
                 <div className="flex items-center mb-6">
@@ -290,41 +347,71 @@ export default function HomePage() {
                   Explore Modules
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Module Categories */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group"
+            >
               <Shield className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Security Pack</h3>
               <p className="text-gray-300 text-sm mb-3">Cameras, sensors, smart locks, monitoring</p>
               <div className="text-[#d18c52] font-semibold">From $49/mo</div>
-            </div>
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group"
+            >
               <Zap className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Comfort Pack</h3>
               <p className="text-gray-300 text-sm mb-3">Thermostats, lighting, shades, automation</p>
               <div className="text-[#d18c52] font-semibold">From $39/mo</div>
-            </div>
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group"
+            >
               <Heart className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Health & Safety</h3>
               <p className="text-gray-300 text-sm mb-3">Air quality, fall detection, emergency alerts</p>
               <div className="text-[#d18c52] font-semibold">From $29/mo</div>
-            </div>
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-xl p-6 border border-[#d18c52]/20 hover:border-[#d18c52] transition-all duration-300 group"
+            >
               <Wrench className="w-12 h-12 text-[#d18c52] mb-4 group-hover:scale-110 transition-transform" />
               <h3 className="text-xl font-bold text-white mb-2">Care & Support</h3>
               <p className="text-gray-300 text-sm mb-3">24/7 monitoring, maintenance, concierge</p>
               <div className="text-[#d18c52] font-semibold">From $89/mo</div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Enhanced Call to Action */}
-      <section className="py-24 bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.8 }}
+        className="py-24 bg-gradient-to-br from-[#161C20] via-[#1a2328] to-[#161C20]"
+      >
                   <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-8">
               Ready to <span className="bg-gradient-to-r from-[#d18c52] to-[#e09660] bg-clip-text text-transparent">Transform Your Home</span>?
@@ -335,18 +422,36 @@ export default function HomePage() {
           
           {/* Urgency elements */}
           <div className="flex flex-wrap justify-center gap-6 mb-12">
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20"
+            >
               <div className="text-2xl font-bold text-[#d18c52]">Free Installation</div>
               <div className="text-lg text-gray-300">$500 value</div>
-            </div>
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20"
+            >
               <div className="text-2xl font-bold text-[#d18c52]">30-Day Trial</div>
               <div className="text-lg text-gray-300">Risk-free start</div>
-            </div>
-            <div className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-[#1F2937]/50 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#d18c52]/20"
+            >
               <div className="text-2xl font-bold text-[#d18c52]">24/7 Support</div>
               <div className="text-lg text-gray-300">Always here</div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -360,7 +465,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="bg-[#0F1419] border-t border-[#d18c52]/20">
