@@ -42,6 +42,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/installation" className="text-gray-300 hover:text-[#d18c52] transition-colors">
+                  Installation
+                </Link>
+              </li>
+              <li>
+                <Link href="/monitoring" className="text-gray-300 hover:text-[#d18c52] transition-colors">
+                  Monitoring
+                </Link>
+              </li>
+              <li>
                 <Link href="/why-dwella" className="text-gray-300 hover:text-[#d18c52] transition-colors">
                   Why Dwella
                 </Link>

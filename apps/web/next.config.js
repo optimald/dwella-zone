@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Basic configuration without experimental features
   compress: true,
   poweredByHeader: false,
@@ -19,6 +18,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/chart/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'api.qrserver.com',
+        port: '',
+        pathname: '/v1/create-qr-code/**',
+      },
     ],
   },
 
@@ -35,4 +40,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig; 

@@ -1,19 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useConfiguratorStore } from '@/stores/configuratorStore';
+import { useEffect, useState } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import ConfiguratorFlow from '@/components/configurator/ConfiguratorFlow';
 import ConfiguratorSummary from '@/components/configurator/ConfiguratorSummary';
 
 export default function ConfiguratorPage() {
-  const { showSummary, resetConfigurator } = useConfiguratorStore();
-
-  useEffect(() => {
-    // Reset configurator when page loads
-    resetConfigurator();
-  }, [resetConfigurator]);
+  const [showSummary, setShowSummary] = useState(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background-dark via-secondary-800 to-background-dark">

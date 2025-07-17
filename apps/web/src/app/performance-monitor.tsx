@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { trackEvent } from './analytics';
+import { trackEvent } from '../lib/analytics-utils';
 
 export default function PerformanceMonitor() {
   useEffect(() => {

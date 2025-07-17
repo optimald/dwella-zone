@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import StructuredData from "./structured-data";
-import Analytics from "./analytics";
-import ServiceWorkerRegistration from "./service-worker";
-import PerformanceMonitor from "./performance-monitor";
+import ClientComponents from "./client-components";
 
 export const metadata: Metadata = {
   title: "Dwella - Smart Home Security & Automation | 24/7 Monitoring",
@@ -107,9 +105,7 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="antialiased">
-        <Analytics />
-        <ServiceWorkerRegistration />
-        <PerformanceMonitor />
+        <ClientComponents />
         {children}
       </body>
     </html>

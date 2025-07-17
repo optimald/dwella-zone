@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Download, Mail, QrCode, ArrowLeft, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 import { useConfiguratorStore } from '@/stores/configuratorStore'
